@@ -1,0 +1,1153 @@
+[
+  {
+    "key": "hdfc_large_cap",
+    "scheme_name": "HDFC Large Cap Fund Direct Growth",
+    "scheme_short": "Large Cap",
+    "category": "Equity Large Cap",
+    "plan": "Direct Growth",
+    "url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "title": "HDFC Large Cap Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+    "retrieved_at": "2026-09-27T07:12:56+00:00",
+    "conflicts": [
+      "riskometer: page shows 'Very High Risk', embedded payload says 'Moderately High Riskometer' (page wins)",
+      "fund_manager: embedded payload 'Prashant Jain' absent from visible page (page wins)",
+      "launch_date: embedded payload '01-Jan-2013' differs from page '10 Dec 1999' (page wins)"
+    ],
+    "links": {
+      "sid": "https://www.hdfcfund.com",
+      "hdfc_site": "https://www.hdfcfund.com"
+    },
+    "facts": [
+      {
+        "field": "riskometer",
+        "label": "Riskometer",
+        "value": "Very High Risk",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "nav",
+        "label": "NAV",
+        "value": "₹1,189.08",
+        "section": "Key facts",
+        "as_of": "25 Sep '26"
+      },
+      {
+        "field": "min_sip",
+        "label": "Min. for SIP",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "aum",
+        "label": "Fund size (AUM)",
+        "value": "₹39,933.37 Cr",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "expense_ratio",
+        "label": "Expense ratio",
+        "value": "1.03%",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "rating",
+        "label": "Rating",
+        "value": "4",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_lumpsum",
+        "label": "Min. for 1st investment",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_additional",
+        "label": "Min. for 2nd investment",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "category",
+        "label": "Fund category",
+        "value": "Equity",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "sub_category",
+        "label": "Sub-category",
+        "value": "Large Cap",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "exit_load",
+        "label": "Exit load",
+        "value": "Exit load of 1% if redeemed within 1 year",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "stamp_duty",
+        "label": "Stamp duty on investment",
+        "value": "0.005% (from July 1st, 2020)",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "tax_implication",
+        "label": "Tax implication",
+        "value": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "objective",
+        "label": "Investment objective",
+        "value": "The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Large-Cap companies.",
+        "section": "Objective",
+        "as_of": null
+      },
+      {
+        "field": "benchmark",
+        "label": "Benchmark",
+        "value": "NIFTY 100 Total Return Index",
+        "section": "Benchmark",
+        "as_of": null
+      },
+      {
+        "field": "fund_house",
+        "label": "Fund house",
+        "value": "HDFC Mutual Fund",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rank",
+        "label": "Rank (total assets)",
+        "value": "#2 in India",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "total_aum",
+        "label": "Total AUM",
+        "value": "₹9,86,236.84 Cr",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "incorporation_date",
+        "label": "Date of Incorporation",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "launch_date",
+        "label": "Launch Date",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "custodian",
+        "label": "Custodian",
+        "value": "HDFC Bank",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rta",
+        "label": "Registrar & Transfer Agent",
+        "value": "Cams",
+        "section": "Scheme details",
+        "as_of": null
+      }
+    ],
+    "prose": [
+      {
+        "heading": "Exit load revision history",
+        "text": "Historic exit load changes listed on the scheme page: 08 May 2015: Exit load of 1% if redeemed within 1 year | 16 Feb 2015: Exit load of 1% if redeemed within 18 months | 01 Jan 2013: Exit load of 1% if redeemed within 1 year.",
+        "section": "Fees, exit load and tax"
+      },
+      {
+        "heading": "Glossary: Absolute returns",
+        "text": "The total return of a mutual fund over a given period.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Expense ratio",
+        "text": "A fee payable to a mutual fund house for managing your mutual fund investments. It is the total percentage of a company's fund assets used for administrative, management, advertising, and other expenses.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Tax",
+        "text": "A percentage of your capital gains payable to the government upon exiting your mutual fund investments. Taxation is categorized as long-term capital gains (LTCG) and short-term capital gains (STCG) depending on your holding period and the type of fund.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Exit load",
+        "text": "A fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Stamp duty",
+        "text": "A form of tax payable for the purchase or sale of an asset or security.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "About the scheme",
+        "text": "HDFC Large Cap Fund Direct Growth is a Equity Mutual Fund Scheme launched by HDFC Mutual Fund. This scheme was made available to investors on 10 Dec 1999. Rahul Baijal is the Current Fund Manager of HDFC Large Cap Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of ₹9,86,237 Cr and the Latest NAV as of 25 Sep 2026 is ₹1,189.08.\nThe HDFC Large Cap Fund Direct Growth is rated Very High risk. Minimum SIP Investment is set to ₹100. Minimum Lumpsum Investment is ₹100. Exit load of 1% if redeemed within 1 year ;",
+        "section": "About the scheme"
+      },
+      {
+        "heading": "Fund manager: Rahul Baijal",
+        "text": "Rahul Baijal (Jul 2022 - Present). Mr. Baijal has done PGDM(MBA) from IIM Calcutta and is an engineering graduate of Delhi college of Engineering Prior to joining HDFC Mutual Fund, he has worked with Sundaram Mutual Fund, Bharti AXA Life Insurance, TVF Capital, HSBC Securities, Credit Suisse Securities & Standard Chartered Bank.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Dhruv Muchhal",
+        "text": "Dhruv Muchhal (Jun 2023 - Present). Mr. Dhruv has done B.Com, CA and CFA Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Top 25 holdings (page lists 50 holdings)",
+        "text": "Largest holdings by weight as shown on the scheme page: ICICI Bank Ltd (10.05%); HDFC Bank Ltd (6.88%); Bharti Airtel Ltd (6.23%); Kotak Mahindra Bank Ltd (5.71%); Titan Company Ltd (5.27%); Reliance Industries Ltd (4.78%); Torrent Pharmaceuticals Ltd (4.04%); Axis Bank Ltd (3.49%); Bajaj Finserv Ltd (3.33%); Bajaj Auto Ltd (2.93%); Infosys Ltd (2.76%); Lupin Ltd (2.53%); Zomato Ltd (2.49%); Cholamandalam Investment & Finance Company Ltd (2.44%); Ambuja Cements Ltd (2.24%); Tata Motors Ltd (2.02%); Larsen & Toubro Ltd (1.99%); Interglobe Aviation Ltd (1.97%); State Bank of India (1.89%); NTPC Ltd (1.83%); United Spirits Ltd (1.78%); Max Healthcare Institute Ltd (1.72%); Mankind Pharma Ltd. (1.66%); Indusind Bank Ltd (1.57%); ICICI Prudential Asset Management Company Ltd. (1.43%).",
+        "section": "Holdings"
+      }
+    ]
+  },
+  {
+    "key": "hdfc_flexi_cap",
+    "scheme_name": "HDFC Equity Fund Direct Growth",
+    "scheme_short": "Flexi Cap",
+    "category": "Equity Flexi Cap",
+    "plan": "Direct Growth",
+    "url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+    "title": "HDFC Flexi Cap Direct Plan Growth - NAV, Mutual Fund Performance & Portfolio",
+    "retrieved_at": "2026-09-27T07:12:58+00:00",
+    "conflicts": [
+      "riskometer: page shows 'Very High Risk', embedded payload says 'Moderately High' (page wins)",
+      "fund_manager: embedded payload 'Prashant Jain' absent from visible page (page wins)",
+      "launch_date: embedded payload '01-Jan-2013' differs from page '10 Dec 1999' (page wins)"
+    ],
+    "links": {
+      "sid": "https://www.hdfcfund.com",
+      "hdfc_site": "https://www.hdfcfund.com"
+    },
+    "facts": [
+      {
+        "field": "riskometer",
+        "label": "Riskometer",
+        "value": "Very High Risk",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "nav",
+        "label": "NAV",
+        "value": "₹2,214.57",
+        "section": "Key facts",
+        "as_of": "25 Sep '26"
+      },
+      {
+        "field": "min_sip",
+        "label": "Min. for SIP",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "aum",
+        "label": "Fund size (AUM)",
+        "value": "₹1,13,606.47 Cr",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "expense_ratio",
+        "label": "Expense ratio",
+        "value": "0.77%",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "rating",
+        "label": "Rating",
+        "value": "5",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_lumpsum",
+        "label": "Min. for 1st investment",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_additional",
+        "label": "Min. for 2nd investment",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "category",
+        "label": "Fund category",
+        "value": "Equity",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "sub_category",
+        "label": "Sub-category",
+        "value": "Flexi Cap",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "exit_load",
+        "label": "Exit load",
+        "value": "Exit load of 1% if redeemed within 1 year",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "stamp_duty",
+        "label": "Stamp duty on investment",
+        "value": "0.005% (from July 1st, 2020)",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "tax_implication",
+        "label": "Tax implication",
+        "value": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "objective",
+        "label": "Investment objective",
+        "value": "The scheme seeks to generate capital appreciation / income from a portfolio, predominantly invested in equity & equity related instruments.",
+        "section": "Objective",
+        "as_of": null
+      },
+      {
+        "field": "benchmark",
+        "label": "Benchmark",
+        "value": "NIFTY 500 Total Return Index",
+        "section": "Benchmark",
+        "as_of": null
+      },
+      {
+        "field": "fund_house",
+        "label": "Fund house",
+        "value": "HDFC Mutual Fund",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rank",
+        "label": "Rank (total assets)",
+        "value": "#2 in India",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "total_aum",
+        "label": "Total AUM",
+        "value": "₹9,86,236.84 Cr",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "incorporation_date",
+        "label": "Date of Incorporation",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "launch_date",
+        "label": "Launch Date",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "custodian",
+        "label": "Custodian",
+        "value": "Deutsche Bank",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rta",
+        "label": "Registrar & Transfer Agent",
+        "value": "Cams",
+        "section": "Scheme details",
+        "as_of": null
+      }
+    ],
+    "prose": [
+      {
+        "heading": "Exit load revision history",
+        "text": "Historic exit load changes listed on the scheme page: 01 Jan 2013: Exit load of 1% if redeemed within 1 year.",
+        "section": "Fees, exit load and tax"
+      },
+      {
+        "heading": "Glossary: Absolute returns",
+        "text": "The total return of a mutual fund over a given period.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Expense ratio",
+        "text": "A fee payable to a mutual fund house for managing your mutual fund investments. It is the total percentage of a company's fund assets used for administrative, management, advertising, and other expenses.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Tax",
+        "text": "A percentage of your capital gains payable to the government upon exiting your mutual fund investments. Taxation is categorized as long-term capital gains (LTCG) and short-term capital gains (STCG) depending on your holding period and the type of fund.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Exit load",
+        "text": "A fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Stamp duty",
+        "text": "A form of tax payable for the purchase or sale of an asset or security.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Fund manager: Dhruv Muchhal",
+        "text": "Dhruv Muchhal (Jun 2023 - Present). Mr. Dhruv has done B.Com, CA and CFA Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Amit Ganatra",
+        "text": "Amit Ganatra (Feb 2026 - Present). Mr. Ganatra holds a Commerce degree and is a Charted Accountant. He is also a Chartered Financial Analyst from AIMR. Prior to joining the HDFC AMC, he has worked with Invesco Asset Management (India) Pvt. Ltd, HDFC Mutual Fund, DBS Cholamandalam AMC Pvt. Ltd. and Fidelity.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Top 25 holdings (page lists 86 holdings)",
+        "text": "Largest holdings by weight as shown on the scheme page: ICICI Bank Ltd (9.19%); Axis Bank Ltd (6.19%); HDFC Bank Ltd (5.71%); State Bank of India (4.16%); Zomato Ltd (3.39%); Kotak Mahindra Bank Ltd (3.27%); SBI Life Insurance Company Ltd (3.19%); Larsen & Toubro Ltd (3.16%); Interglobe Aviation Ltd (2.98%); Maruti Suzuki India Ltd (2.74%); Bharti Airtel Ltd (2.58%); Repo (2.55%); HCL Technologies Ltd (2.48%); Cipla Ltd (2.47%); Eicher Motors Ltd (2.44%); Power Grid Corporation of India Ltd (2.04%); Hyundai Motor India Ltd. (1.75%); Nexus Select Trust (1.62%); Divi's Laboratories Ltd (1.58%); PB Fintech Ltd (1.52%); Max Healthcare Institute Ltd (1.49%); JSW Steel Ltd (1.45%); Piramal Pharma Ltd (1.44%); Reliance Industries Ltd (1.44%); Bosch Ltd (1.34%).",
+        "section": "Holdings"
+      }
+    ]
+  },
+  {
+    "key": "hdfc_elss",
+    "scheme_name": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+    "scheme_short": "ELSS",
+    "category": "Equity ELSS",
+    "plan": "Direct Plan Growth",
+    "url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "title": "HDFC ELSS Tax Saver Fund Direct Plan Growth - NAV, Mutual Fund Performance & Portfolio",
+    "retrieved_at": "2026-09-27T07:13:00+00:00",
+    "conflicts": [
+      "riskometer: page shows 'Very High Risk', embedded payload says 'Moderately High' (page wins)",
+      "fund_manager: embedded payload 'Vinay Kulkarni' absent from visible page (page wins)",
+      "launch_date: embedded payload '01-Jan-2013' differs from page '10 Dec 1999' (page wins)"
+    ],
+    "links": {
+      "sid": "https://www.hdfcfund.com",
+      "hdfc_site": "https://www.hdfcfund.com"
+    },
+    "facts": [
+      {
+        "field": "riskometer",
+        "label": "Riskometer",
+        "value": "Very High Risk",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "nav",
+        "label": "NAV",
+        "value": "₹1,447.38",
+        "section": "Key facts",
+        "as_of": "25 Sep '26"
+      },
+      {
+        "field": "min_sip",
+        "label": "Min. for SIP",
+        "value": "₹500",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "aum",
+        "label": "Fund size (AUM)",
+        "value": "₹15,991.78 Cr",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "expense_ratio",
+        "label": "Expense ratio",
+        "value": "1.21%",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "rating",
+        "label": "Rating",
+        "value": "5",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_lumpsum",
+        "label": "Min. for 1st investment",
+        "value": "₹500",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_additional",
+        "label": "Min. for 2nd investment",
+        "value": "₹500",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "lock_in",
+        "label": "Lock-in period",
+        "value": "3Y (as stated on the scheme page)",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "category",
+        "label": "Fund category",
+        "value": "Equity",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "sub_category",
+        "label": "Sub-category",
+        "value": "ELSS",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "exit_load",
+        "label": "Exit load",
+        "value": "Nil",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "stamp_duty",
+        "label": "Stamp duty on investment",
+        "value": "0.005% (from July 1st, 2020)",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "tax_implication",
+        "label": "Tax implication",
+        "value": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "objective",
+        "label": "Investment objective",
+        "value": "The scheme seeks to generate capital appreciation / income from a portfolio, comprising predominantly of equity & equity related instruments.",
+        "section": "Objective",
+        "as_of": null
+      },
+      {
+        "field": "benchmark",
+        "label": "Benchmark",
+        "value": "NIFTY 500 Total Return Index",
+        "section": "Benchmark",
+        "as_of": null
+      },
+      {
+        "field": "fund_house",
+        "label": "Fund house",
+        "value": "HDFC Mutual Fund",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rank",
+        "label": "Rank (total assets)",
+        "value": "#2 in India",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "total_aum",
+        "label": "Total AUM",
+        "value": "₹9,86,236.84 Cr",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "incorporation_date",
+        "label": "Date of Incorporation",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "launch_date",
+        "label": "Launch Date",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "custodian",
+        "label": "Custodian",
+        "value": "Deutsche Bank",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rta",
+        "label": "Registrar & Transfer Agent",
+        "value": "Cams",
+        "section": "Scheme details",
+        "as_of": null
+      }
+    ],
+    "prose": [
+      {
+        "heading": "Glossary: Absolute returns",
+        "text": "The total return of a mutual fund over a given period.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Expense ratio",
+        "text": "A fee payable to a mutual fund house for managing your mutual fund investments. It is the total percentage of a company's fund assets used for administrative, management, advertising, and other expenses.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Tax",
+        "text": "A percentage of your capital gains payable to the government upon exiting your mutual fund investments. Taxation is categorized as long-term capital gains (LTCG) and short-term capital gains (STCG) depending on your holding period and the type of fund.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Exit load",
+        "text": "A fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Stamp duty",
+        "text": "A form of tax payable for the purchase or sale of an asset or security.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "About the scheme",
+        "text": "HDFC ELSS Tax Saver Fund Direct Plan Growth is a Equity Mutual Fund Scheme launched by HDFC Mutual Fund. This scheme was made available to investors on 10 Dec 1999. Amar Kalkundrikar is the Current Fund Manager of HDFC ELSS Tax Saver Fund Direct Plan Growth fund. The fund currently has an Asset Under Management(AUM) of ₹9,86,237 Cr and the Latest NAV as of 25 Sep 2026 is ₹1,447.38.\nThe HDFC ELSS Tax Saver Fund Direct Plan Growth is rated Very High risk. Minimum SIP Investment is set to ₹500. Minimum Lumpsum Investment is ₹500. ;",
+        "section": "About the scheme"
+      },
+      {
+        "heading": "Fund manager: Amar Kalkundrikar",
+        "text": "Amar Kalkundrikar (Dec 2025 - Present). Mr. Kalkundrikar has done B.Com, CA, CFA, and MBA from Columbia Business School. Prior to joining HDFC Asset Management Company Limited, he has worked with Nippon India Mutual Fund, and HDFC AMC. He worked with multiple roles at HDFC MF.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Dhruv Muchhal",
+        "text": "Dhruv Muchhal (Jun 2023 - Present). Mr. Dhruv has done B.Com, CA and CFA Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Top 25 holdings (page lists 65 holdings)",
+        "text": "Largest holdings by weight as shown on the scheme page: ICICI Bank Ltd (9.32%); HDFC Bank Ltd (7.36%); Axis Bank Ltd (6.50%); Maruti Suzuki India Ltd (4.66%); State Bank of India (4.64%); Kotak Mahindra Bank Ltd (4.59%); Bharti Airtel Ltd (4.29%); SBI Life Insurance Company Ltd (3.25%); HCL Technologies Ltd (2.93%); Hyundai Motor India Ltd. (2.76%); Reliance Industries Ltd (2.66%); Zomato Ltd (2.31%); Bajaj Auto Ltd (1.96%); Tata Steel Ltd (1.73%); Britannia Industries Ltd (1.72%); Larsen & Toubro Ltd (1.60%); Apollo Hospitals Enterprise Ltd (1.53%); JSW Steel Ltd (1.51%); Bosch Ltd (1.41%); Dr. Lal Pathlabs Ltd (1.38%); PB Fintech Ltd (1.35%); Interglobe Aviation Ltd (1.34%); Karur Vysya Bank Ltd (1.30%); Jubilant FoodWorks Ltd (1.23%); Metropolis Healthcare Ltd (1.17%).",
+        "section": "Holdings"
+      }
+    ]
+  },
+  {
+    "key": "hdfc_small_cap",
+    "scheme_name": "HDFC Small Cap Fund Direct Growth",
+    "scheme_short": "Small Cap",
+    "category": "Equity Small Cap",
+    "plan": "Direct Growth",
+    "url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+    "title": "HDFC Small Cap Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+    "retrieved_at": "2026-09-27T07:13:02+00:00",
+    "conflicts": [
+      "riskometer: page shows 'Very High Risk', embedded payload says 'Moderately High Riskometer' (page wins)",
+      "launch_date: embedded payload '01-Jan-2013' differs from page '10 Dec 1999' (page wins)"
+    ],
+    "links": {
+      "sid": "https://www.hdfcfund.com",
+      "hdfc_site": "https://www.hdfcfund.com"
+    },
+    "facts": [
+      {
+        "field": "riskometer",
+        "label": "Riskometer",
+        "value": "Very High Risk",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "nav",
+        "label": "NAV",
+        "value": "₹159.82",
+        "section": "Key facts",
+        "as_of": "25 Sep '26"
+      },
+      {
+        "field": "min_sip",
+        "label": "Min. for SIP",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "aum",
+        "label": "Fund size (AUM)",
+        "value": "₹41,890.86 Cr",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "expense_ratio",
+        "label": "Expense ratio",
+        "value": "0.78%",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "rating",
+        "label": "Rating",
+        "value": "3",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_lumpsum",
+        "label": "Min. for 1st investment",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_additional",
+        "label": "Min. for 2nd investment",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "category",
+        "label": "Fund category",
+        "value": "Equity",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "sub_category",
+        "label": "Sub-category",
+        "value": "Small Cap",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "exit_load",
+        "label": "Exit load",
+        "value": "Exit load of 1% if redeemed within 1 year",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "stamp_duty",
+        "label": "Stamp duty on investment",
+        "value": "0.005% (from July 1st, 2020)",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "tax_implication",
+        "label": "Tax implication",
+        "value": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "objective",
+        "label": "Investment objective",
+        "value": "The scheme seeks to provide long-term capital appreciation /income by investing predominantly in Small-Cap companies.",
+        "section": "Objective",
+        "as_of": null
+      },
+      {
+        "field": "benchmark",
+        "label": "Benchmark",
+        "value": "BSE 250 SmallCap Total Return Index",
+        "section": "Benchmark",
+        "as_of": null
+      },
+      {
+        "field": "fund_house",
+        "label": "Fund house",
+        "value": "HDFC Mutual Fund",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rank",
+        "label": "Rank (total assets)",
+        "value": "#2 in India",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "total_aum",
+        "label": "Total AUM",
+        "value": "₹9,86,236.84 Cr",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "incorporation_date",
+        "label": "Date of Incorporation",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "launch_date",
+        "label": "Launch Date",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "custodian",
+        "label": "Custodian",
+        "value": "Citibank NA",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rta",
+        "label": "Registrar & Transfer Agent",
+        "value": "Cams",
+        "section": "Scheme details",
+        "as_of": null
+      }
+    ],
+    "prose": [
+      {
+        "heading": "Exit load revision history",
+        "text": "Historic exit load changes listed on the scheme page: 08 May 2015: Exit load of 1% if redeemed within 1 year | 18 Dec 2014: Exit load of 2% if redeemed within 12 months, 1% if redeemed after 12 months but within 24 months and 0.50% if redeemed after 24 months but within 36 months | 01 Jul 2014: Exit load of 2% if redeemed within 12 months and 1% if redeemed after 12 months but before 18 months | 01 Jan 2013: Exit load of 1% if redeemed within 1 year.",
+        "section": "Fees, exit load and tax"
+      },
+      {
+        "heading": "Glossary: Absolute returns",
+        "text": "The total return of a mutual fund over a given period.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Expense ratio",
+        "text": "A fee payable to a mutual fund house for managing your mutual fund investments. It is the total percentage of a company's fund assets used for administrative, management, advertising, and other expenses.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Tax",
+        "text": "A percentage of your capital gains payable to the government upon exiting your mutual fund investments. Taxation is categorized as long-term capital gains (LTCG) and short-term capital gains (STCG) depending on your holding period and the type of fund.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Exit load",
+        "text": "A fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Stamp duty",
+        "text": "A form of tax payable for the purchase or sale of an asset or security.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "About the scheme",
+        "text": "HDFC Small Cap Fund Direct Growth is a Equity Mutual Fund Scheme launched by HDFC Mutual Fund. This scheme was made available to investors on 10 Dec 1999. Dhruv Muchhal is the Current Fund Manager of HDFC Small Cap Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of ₹9,86,237 Cr and the Latest NAV as of 25 Sep 2026 is ₹159.82.\nThe HDFC Small Cap Fund Direct Growth is rated Very High risk. Minimum SIP Investment is set to ₹100. Minimum Lumpsum Investment is ₹100. Exit load of 1% if redeemed within 1 year ;",
+        "section": "About the scheme"
+      },
+      {
+        "heading": "Fund manager: Dhruv Muchhal",
+        "text": "Dhruv Muchhal (Jun 2023 - Present). Mr. Dhruv has done B.Com, CA and CFA Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Chirag Setalvad",
+        "text": "Chirag Setalvad (Jun 2014 - Present). Mr. Setalvad is a B. Sc and MBA from University of North Carolina. Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Top 25 holdings (page lists 87 holdings)",
+        "text": "Largest holdings by weight as shown on the scheme page: Repo (10.25%); Firstsource Solutions Ltd (3.71%); Aster DM Healthcare Ltd (3.56%); Gabriel India Ltd (3.25%); eClerx Services Ltd (3.09%); Bank Of Baroda (2.67%); Indian Bank (2.08%); Krishna Institute Of Medical Sciences Ltd (2.01%); Eris Lifesciences Ltd (2.00%); Apar Industries Ltd (1.90%); Pearl Global Industries Ltd (1.77%); The Federal Bank Ltd (1.77%); Sudarshan Chemical Industries Ltd (1.75%); Home First Finance Company India Ltd (1.69%); Vijaya Diagnostic Centre Ltd (1.67%); PVR Ltd (1.66%); Chalet Hotels Ltd (1.63%); Kalpataru Power Transmission Ltd (1.55%); City Union Bank Ltd (1.46%); Suprajit Engineering Ltd (1.42%); The Great Eastern Shipping Company Ltd (1.41%); Sonata Software Ltd (1.40%); Power Mech Projects Ltd (1.32%); Akzo Nobel India Ltd (1.32%); Timken India Ltd (1.31%).",
+        "section": "Holdings"
+      }
+    ]
+  },
+  {
+    "key": "hdfc_balanced_advantage",
+    "scheme_name": "HDFC Balanced Advantage Fund Direct Growth",
+    "scheme_short": "Balanced Advantage",
+    "category": "Hybrid Balanced Advantage",
+    "plan": "Direct Growth",
+    "url": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+    "title": "HDFC Balanced Advantage Fund Direct Growth - NAV, Mutual Fund Performance & Portfolio",
+    "retrieved_at": "2026-09-27T07:13:04+00:00",
+    "conflicts": [
+      "riskometer: page shows 'Very High Risk', embedded payload says 'Moderately High Riskometer' (page wins)",
+      "fund_manager: embedded payload 'Srinivas Rao Ravuri' absent from visible page (page wins)",
+      "launch_date: embedded payload '01-Jan-2013' differs from page '10 Dec 1999' (page wins)"
+    ],
+    "links": {
+      "sid": "https://www.hdfcfund.com",
+      "hdfc_site": "https://www.hdfcfund.com"
+    },
+    "facts": [
+      {
+        "field": "riskometer",
+        "label": "Riskometer",
+        "value": "Very High Risk",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "nav",
+        "label": "NAV",
+        "value": "₹557.73",
+        "section": "Key facts",
+        "as_of": "25 Sep '26"
+      },
+      {
+        "field": "min_sip",
+        "label": "Min. for SIP",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "aum",
+        "label": "Fund size (AUM)",
+        "value": "₹1,07,295.79 Cr",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "expense_ratio",
+        "label": "Expense ratio",
+        "value": "0.78%",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "rating",
+        "label": "Rating",
+        "value": "5",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_lumpsum",
+        "label": "Min. for 1st investment",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "min_additional",
+        "label": "Min. for 2nd investment",
+        "value": "₹100",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "category",
+        "label": "Fund category",
+        "value": "Hybrid",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "sub_category",
+        "label": "Sub-category",
+        "value": "Dynamic Asset Allocation",
+        "section": "Key facts",
+        "as_of": null
+      },
+      {
+        "field": "exit_load",
+        "label": "Exit load",
+        "value": "Exit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year.",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "stamp_duty",
+        "label": "Stamp duty on investment",
+        "value": "0.005% (from July 1st, 2020)",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "tax_implication",
+        "label": "Tax implication",
+        "value": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.",
+        "section": "Fees, exit load and tax",
+        "as_of": null
+      },
+      {
+        "field": "objective",
+        "label": "Investment objective",
+        "value": "The Scheme seeks to provide long term capital appreciation / income from a dynamic mix of equity and debt investments.",
+        "section": "Objective",
+        "as_of": null
+      },
+      {
+        "field": "benchmark",
+        "label": "Benchmark",
+        "value": "NIFTY 50 Hybrid Composite Debt 50:50 Index",
+        "section": "Benchmark",
+        "as_of": null
+      },
+      {
+        "field": "fund_house",
+        "label": "Fund house",
+        "value": "HDFC Mutual Fund",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rank",
+        "label": "Rank (total assets)",
+        "value": "#2 in India",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "total_aum",
+        "label": "Total AUM",
+        "value": "₹9,86,236.84 Cr",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "incorporation_date",
+        "label": "Date of Incorporation",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "launch_date",
+        "label": "Launch Date",
+        "value": "10 Dec 1999",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "custodian",
+        "label": "Custodian",
+        "value": "HDFC Bank",
+        "section": "Scheme details",
+        "as_of": null
+      },
+      {
+        "field": "rta",
+        "label": "Registrar & Transfer Agent",
+        "value": "Cams",
+        "section": "Scheme details",
+        "as_of": null
+      }
+    ],
+    "prose": [
+      {
+        "heading": "Exit load revision history",
+        "text": "Historic exit load changes listed on the scheme page: 08 May 2015: Exit load of 1% if redeemed within 1 year | 18 Dec 2014: Exit load of 2% if redeemed within 12 months, 1% if redeemed after 12 months but within 24 months and 0.50% if redeemed after 24 months but within 36 months | 01 Jan 2013: Exit load of 1% if redeemed within 1 year.",
+        "section": "Fees, exit load and tax"
+      },
+      {
+        "heading": "Glossary: Absolute returns",
+        "text": "The total return of a mutual fund over a given period.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Expense ratio",
+        "text": "A fee payable to a mutual fund house for managing your mutual fund investments. It is the total percentage of a company's fund assets used for administrative, management, advertising, and other expenses.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Tax",
+        "text": "A percentage of your capital gains payable to the government upon exiting your mutual fund investments. Taxation is categorized as long-term capital gains (LTCG) and short-term capital gains (STCG) depending on your holding period and the type of fund.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Exit load",
+        "text": "A fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "Glossary: Stamp duty",
+        "text": "A form of tax payable for the purchase or sale of an asset or security.",
+        "section": "Glossary"
+      },
+      {
+        "heading": "About the scheme",
+        "text": "HDFC Balanced Advantage Fund Direct Growth is a Hybrid Mutual Fund Scheme launched by HDFC Mutual Fund. This scheme was made available to investors on 10 Dec 1999. Anil Bamboli is the Current Fund Manager of HDFC Balanced Advantage Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of ₹9,86,237 Cr and the Latest NAV as of 25 Sep 2026 is ₹557.73.\nThe HDFC Balanced Advantage Fund Direct Growth is rated Very High risk. Minimum SIP Investment is set to ₹100. Minimum Lumpsum Investment is ₹100. Exit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year. ;",
+        "section": "About the scheme"
+      },
+      {
+        "heading": "Fund manager: Anil Bamboli",
+        "text": "Anil Bamboli (Jul 2022 - Present). Mr. Bamboli is a CFA from Association for Investment Management and Research, U.S.A, Masters in Management Studies (Finance) and a Graduate in Cost and Works Accountant from ICWAI. Prior to joining HDFC AMC he has worked with SBI Fund Management for 11 years.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Arun Agarwal",
+        "text": "Arun Agarwal (Oct 2022 - Present). Mr. Agarwal is a B.Com. and Chartered Accountant Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Dhruv Muchhal",
+        "text": "Dhruv Muchhal (Jun 2023 - Present). Mr. Dhruv has done B.Com, CA and CFA Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Nandita Menezes",
+        "text": "Nandita Menezes (Mar 2025 - Present). CA (ICAI, INDIA), B.Com (University of Mumbai) Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Gopal Agrawal",
+        "text": "Gopal Agrawal (Jul 2022 - Present). Mr.Agrawal is a B.E and MBM. Prior to joining HDFC Mutual Fund he has worked with DSP Mutual Fund, Tata AMC, Mirae Asset Mutual Fund ,SBI Mutual Fund, Kotak Securities, HDFC Securities, IDBI Capital, UTI Securities and IPCL.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Fund manager: Ihab Dalwai",
+        "text": "Ihab Dalwai (Sep 2026 - Present). Mr. Dalwai is a Chartered Accountant. Prior to joining the HDFC AMC, he was associated with ICICI Prudential AMC.",
+        "section": "Fund management"
+      },
+      {
+        "heading": "Top 25 holdings (page lists 326 holdings)",
+        "text": "Largest holdings by weight as shown on the scheme page: ICICI Bank Ltd (5.32%); HDFC Bank Ltd (4.13%); Reliance Industries Ltd (3.74%); State Bank of India (3.46%); Bharti Airtel Ltd (2.93%); Axis Bank Ltd (2.68%); Larsen & Toubro Ltd (2.59%); GOI Sec 7.18 14/08/2033 (1.99%); NTPC Ltd (1.94%); Zomato Ltd (1.65%); Coal India Ltd (1.60%); Infosys Ltd (1.59%); Sun Pharmaceutical Industries Ltd (1.54%); Kotak Mahindra Bank Ltd (1.52%); Maruti Suzuki India Ltd (1.46%); HCL Technologies Ltd (1.24%); Tata Consultancy Services Ltd (1.20%); Life Insurance Corporation of India (1.18%); Interglobe Aviation Ltd (1.18%); Lupin Ltd (1.16%); ITC Ltd (1.02%); Mahindra & Mahindra Ltd (0.87%); SBI Life Insurance Company Ltd (0.87%); Hyundai Motor India Ltd. (0.82%); GAIL (India) Ltd (0.81%).",
+        "section": "Holdings"
+      }
+    ]
+  }
+]

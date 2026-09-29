@@ -1,0 +1,783 @@
+{
+  "generated_by": "hand-authored seed (no LLM)",
+  "note": "Cache of paraphrased benchmark queries. Gold labels are unchanged; only wording varies. Regenerate with scripts/gen_paraphrases.py (LLM) or --seed (no key). Used by scripts/benchmark_paraphrase.py to measure retrieval robustness to phrasing.",
+  "styles": {
+    "terse": "as short as possible, like a search box - drop articles and auxiliary verbs",
+    "colloquial": "how a first-time retail investor would actually say it out loud, casually",
+    "verbose": "a full rambling sentence with a clause of context before the question",
+    "jargon": "using fund-industry jargon and abbreviations, the way an analyst would",
+    "keywords": "just the keywords, no grammatical sentence at all, like a query string"
+  },
+  "queries": {
+    "Large Cap|expense_ratio": {
+      "scheme": "Large Cap",
+      "field": "expense_ratio",
+      "template_query": "What is the expense ratio of HDFC Large Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Large Cap Fund Direct Growth expense ratio"
+        ],
+        "colloquial": [
+          "how much do they charge in fees for HDFC Large Cap Fund Direct Growth?"
+        ],
+        "verbose": [
+          "I have been looking at HDFC Large Cap Fund Direct Growth and I am trying to work out what the annual charges work out at."
+        ],
+        "jargon": [
+          "HDFC Large Cap Fund Direct Growth TER / expense ratio"
+        ],
+        "keywords": [
+          "HDFC Large Cap Fund Direct Growth Large Cap annual fee %"
+        ]
+      }
+    },
+    "Large Cap|exit_load": {
+      "scheme": "Large Cap",
+      "field": "exit_load",
+      "template_query": "What is the exit load of HDFC Large Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Large Cap Fund Direct Growth exit load"
+        ],
+        "colloquial": [
+          "if I sell HDFC Large Cap Fund Direct Growth early, do I lose anything?"
+        ],
+        "verbose": [
+          "I am wondering whether there is any penalty if I redeem HDFC Large Cap Fund Direct Growth before it has been running for a while."
+        ],
+        "jargon": [
+          "HDFC Large Cap Fund Direct Growth exit load schedule, 1yr cut-off"
+        ],
+        "keywords": [
+          "HDFC Large Cap Fund Direct Growth Large Cap exit load redemption charge"
+        ]
+      }
+    },
+    "Large Cap|min_sip": {
+      "scheme": "Large Cap",
+      "field": "min_sip",
+      "template_query": "What is the minimum SIP amount of HDFC Large Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Large Cap Fund Direct Growth minimum SIP"
+        ],
+        "colloquial": [
+          "what's the smallest amount I can put in each month for HDFC Large Cap Fund Direct Growth?"
+        ],
+        "verbose": [
+          "I would like to start investing a small amount every month in HDFC Large Cap Fund Direct Growth but I need to know the smallest amount that is actually allowed."
+        ],
+        "jargon": [
+          "HDFC Large Cap Fund Direct Growth min SIP / monthly instalment"
+        ],
+        "keywords": [
+          "HDFC Large Cap Fund Direct Growth Large Cap SIP minimum amount"
+        ]
+      }
+    },
+    "Large Cap|min_lumpsum": {
+      "scheme": "Large Cap",
+      "field": "min_lumpsum",
+      "template_query": "What is the minimum lump sum investment of HDFC Large Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Large Cap Fund Direct Growth minimum lump sum"
+        ],
+        "colloquial": [
+          "if I put money in all at once instead, what's the least I can do for HDFC Large Cap Fund Direct Growth?"
+        ],
+        "verbose": [
+          "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC Large Cap Fund Direct Growth?"
+        ],
+        "jargon": [
+          "HDFC Large Cap Fund Direct Growth min lumpsum threshold"
+        ],
+        "keywords": [
+          "HDFC Large Cap Fund Direct Growth Large Cap one-time investment minimum"
+        ]
+      }
+    },
+    "Large Cap|benchmark": {
+      "scheme": "Large Cap",
+      "field": "benchmark",
+      "template_query": "What is the benchmark of HDFC Large Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Large Cap Fund Direct Growth benchmark"
+        ],
+        "colloquial": [
+          "what is HDFC Large Cap Fund Direct Growth actually measured against?"
+        ],
+        "verbose": [
+          "I keep seeing references to an index that HDFC Large Cap Fund Direct Growth is judged against and I would like to know which one it actually is."
+        ],
+        "jargon": [
+          "HDFC Large Cap Fund Direct Growth benchmark index / TRI"
+        ],
+        "keywords": [
+          "HDFC Large Cap Fund Direct Growth Large Cap benchmark index name"
+        ]
+      }
+    },
+    "Large Cap|riskometer": {
+      "scheme": "Large Cap",
+      "field": "riskometer",
+      "template_query": "What is the riskometer level of HDFC Large Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Large Cap Fund Direct Growth riskometer"
+        ],
+        "colloquial": [
+          "how risky does the company itself rate HDFC Large Cap Fund Direct Growth?"
+        ],
+        "verbose": [
+          "The company publishes a risk category for every fund and I would like to know which category HDFC Large Cap Fund Direct Growth currently sits in."
+        ],
+        "jargon": [
+          "HDFC Large Cap Fund Direct Growth riskometer category / SEBI scale"
+        ],
+        "keywords": [
+          "HDFC Large Cap Fund Direct Growth Large Cap risk level category"
+        ]
+      }
+    },
+    "Large Cap|aum": {
+      "scheme": "Large Cap",
+      "field": "aum",
+      "template_query": "What is the fund size AUM of HDFC Large Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Large Cap Fund Direct Growth fund size"
+        ],
+        "colloquial": [
+          "how big is HDFC Large Cap Fund Direct Growth these days?"
+        ],
+        "verbose": [
+          "I am trying to get a sense of how much money is sitting in HDFC Large Cap Fund Direct Growth overall, so that I can judge whether it is a large or small fund."
+        ],
+        "jargon": [
+          "HDFC Large Cap Fund Direct Growth AUM / corpus size"
+        ],
+        "keywords": [
+          "HDFC Large Cap Fund Direct Growth Large Cap total AUM crore"
+        ]
+      }
+    },
+    "Flexi Cap|expense_ratio": {
+      "scheme": "Flexi Cap",
+      "field": "expense_ratio",
+      "template_query": "What is the expense ratio of HDFC Flexi Cap Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Flexi Cap Direct Plan Growth expense ratio"
+        ],
+        "colloquial": [
+          "how much do they charge in fees for HDFC Flexi Cap Direct Plan Growth?"
+        ],
+        "verbose": [
+          "I have been looking at HDFC Flexi Cap Direct Plan Growth and I am trying to work out what the annual charges work out at."
+        ],
+        "jargon": [
+          "HDFC Flexi Cap Direct Plan Growth TER / expense ratio"
+        ],
+        "keywords": [
+          "HDFC Flexi Cap Direct Plan Growth Flexi Cap annual fee %"
+        ]
+      }
+    },
+    "Flexi Cap|exit_load": {
+      "scheme": "Flexi Cap",
+      "field": "exit_load",
+      "template_query": "What is the exit load of HDFC Flexi Cap Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Flexi Cap Direct Plan Growth exit load"
+        ],
+        "colloquial": [
+          "if I sell HDFC Flexi Cap Direct Plan Growth early, do I lose anything?"
+        ],
+        "verbose": [
+          "I am wondering whether there is any penalty if I redeem HDFC Flexi Cap Direct Plan Growth before it has been running for a while."
+        ],
+        "jargon": [
+          "HDFC Flexi Cap Direct Plan Growth exit load schedule, 1yr cut-off"
+        ],
+        "keywords": [
+          "HDFC Flexi Cap Direct Plan Growth Flexi Cap exit load redemption charge"
+        ]
+      }
+    },
+    "Flexi Cap|min_sip": {
+      "scheme": "Flexi Cap",
+      "field": "min_sip",
+      "template_query": "What is the minimum SIP amount of HDFC Flexi Cap Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Flexi Cap Direct Plan Growth minimum SIP"
+        ],
+        "colloquial": [
+          "what's the smallest amount I can put in each month for HDFC Flexi Cap Direct Plan Growth?"
+        ],
+        "verbose": [
+          "I would like to start investing a small amount every month in HDFC Flexi Cap Direct Plan Growth but I need to know the smallest amount that is actually allowed."
+        ],
+        "jargon": [
+          "HDFC Flexi Cap Direct Plan Growth min SIP / monthly instalment"
+        ],
+        "keywords": [
+          "HDFC Flexi Cap Direct Plan Growth Flexi Cap SIP minimum amount"
+        ]
+      }
+    },
+    "Flexi Cap|min_lumpsum": {
+      "scheme": "Flexi Cap",
+      "field": "min_lumpsum",
+      "template_query": "What is the minimum lump sum investment of HDFC Flexi Cap Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Flexi Cap Direct Plan Growth minimum lump sum"
+        ],
+        "colloquial": [
+          "if I put money in all at once instead, what's the least I can do for HDFC Flexi Cap Direct Plan Growth?"
+        ],
+        "verbose": [
+          "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC Flexi Cap Direct Plan Growth?"
+        ],
+        "jargon": [
+          "HDFC Flexi Cap Direct Plan Growth min lumpsum threshold"
+        ],
+        "keywords": [
+          "HDFC Flexi Cap Direct Plan Growth Flexi Cap one-time investment minimum"
+        ]
+      }
+    },
+    "Flexi Cap|benchmark": {
+      "scheme": "Flexi Cap",
+      "field": "benchmark",
+      "template_query": "What is the benchmark of HDFC Flexi Cap Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Flexi Cap Direct Plan Growth benchmark"
+        ],
+        "colloquial": [
+          "what is HDFC Flexi Cap Direct Plan Growth actually measured against?"
+        ],
+        "verbose": [
+          "I keep seeing references to an index that HDFC Flexi Cap Direct Plan Growth is judged against and I would like to know which one it actually is."
+        ],
+        "jargon": [
+          "HDFC Flexi Cap Direct Plan Growth benchmark index / TRI"
+        ],
+        "keywords": [
+          "HDFC Flexi Cap Direct Plan Growth Flexi Cap benchmark index name"
+        ]
+      }
+    },
+    "Flexi Cap|riskometer": {
+      "scheme": "Flexi Cap",
+      "field": "riskometer",
+      "template_query": "What is the riskometer level of HDFC Flexi Cap Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Flexi Cap Direct Plan Growth riskometer"
+        ],
+        "colloquial": [
+          "how risky does the company itself rate HDFC Flexi Cap Direct Plan Growth?"
+        ],
+        "verbose": [
+          "The company publishes a risk category for every fund and I would like to know which category HDFC Flexi Cap Direct Plan Growth currently sits in."
+        ],
+        "jargon": [
+          "HDFC Flexi Cap Direct Plan Growth riskometer category / SEBI scale"
+        ],
+        "keywords": [
+          "HDFC Flexi Cap Direct Plan Growth Flexi Cap risk level category"
+        ]
+      }
+    },
+    "Flexi Cap|aum": {
+      "scheme": "Flexi Cap",
+      "field": "aum",
+      "template_query": "What is the fund size AUM of HDFC Flexi Cap Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Flexi Cap Direct Plan Growth fund size"
+        ],
+        "colloquial": [
+          "how big is HDFC Flexi Cap Direct Plan Growth these days?"
+        ],
+        "verbose": [
+          "I am trying to get a sense of how much money is sitting in HDFC Flexi Cap Direct Plan Growth overall, so that I can judge whether it is a large or small fund."
+        ],
+        "jargon": [
+          "HDFC Flexi Cap Direct Plan Growth AUM / corpus size"
+        ],
+        "keywords": [
+          "HDFC Flexi Cap Direct Plan Growth Flexi Cap total AUM crore"
+        ]
+      }
+    },
+    "ELSS|expense_ratio": {
+      "scheme": "ELSS",
+      "field": "expense_ratio",
+      "template_query": "What is the expense ratio of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth expense ratio"
+        ],
+        "colloquial": [
+          "how much do they charge in fees for HDFC ELSS Tax Saver Fund Direct Plan Growth?"
+        ],
+        "verbose": [
+          "I have been looking at HDFC ELSS Tax Saver Fund Direct Plan Growth and I am trying to work out what the annual charges work out at."
+        ],
+        "jargon": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth TER / expense ratio"
+        ],
+        "keywords": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS annual fee %"
+        ]
+      }
+    },
+    "ELSS|exit_load": {
+      "scheme": "ELSS",
+      "field": "exit_load",
+      "template_query": "What is the exit load of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth exit load"
+        ],
+        "colloquial": [
+          "if I sell HDFC ELSS Tax Saver Fund Direct Plan Growth early, do I lose anything?"
+        ],
+        "verbose": [
+          "I am wondering whether there is any penalty if I redeem HDFC ELSS Tax Saver Fund Direct Plan Growth before it has been running for a while."
+        ],
+        "jargon": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth exit load schedule, 1yr cut-off"
+        ],
+        "keywords": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS exit load redemption charge"
+        ]
+      }
+    },
+    "ELSS|min_sip": {
+      "scheme": "ELSS",
+      "field": "min_sip",
+      "template_query": "What is the minimum SIP amount of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth minimum SIP"
+        ],
+        "colloquial": [
+          "what's the smallest amount I can put in each month for HDFC ELSS Tax Saver Fund Direct Plan Growth?"
+        ],
+        "verbose": [
+          "I would like to start investing a small amount every month in HDFC ELSS Tax Saver Fund Direct Plan Growth but I need to know the smallest amount that is actually allowed."
+        ],
+        "jargon": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth min SIP / monthly instalment"
+        ],
+        "keywords": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS SIP minimum amount"
+        ]
+      }
+    },
+    "ELSS|min_lumpsum": {
+      "scheme": "ELSS",
+      "field": "min_lumpsum",
+      "template_query": "What is the minimum lump sum investment of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth minimum lump sum"
+        ],
+        "colloquial": [
+          "if I put money in all at once instead, what's the least I can do for HDFC ELSS Tax Saver Fund Direct Plan Growth?"
+        ],
+        "verbose": [
+          "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC ELSS Tax Saver Fund Direct Plan Growth?"
+        ],
+        "jargon": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth min lumpsum threshold"
+        ],
+        "keywords": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS one-time investment minimum"
+        ]
+      }
+    },
+    "ELSS|benchmark": {
+      "scheme": "ELSS",
+      "field": "benchmark",
+      "template_query": "What is the benchmark of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth benchmark"
+        ],
+        "colloquial": [
+          "what is HDFC ELSS Tax Saver Fund Direct Plan Growth actually measured against?"
+        ],
+        "verbose": [
+          "I keep seeing references to an index that HDFC ELSS Tax Saver Fund Direct Plan Growth is judged against and I would like to know which one it actually is."
+        ],
+        "jargon": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth benchmark index / TRI"
+        ],
+        "keywords": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS benchmark index name"
+        ]
+      }
+    },
+    "ELSS|riskometer": {
+      "scheme": "ELSS",
+      "field": "riskometer",
+      "template_query": "What is the riskometer level of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth riskometer"
+        ],
+        "colloquial": [
+          "how risky does the company itself rate HDFC ELSS Tax Saver Fund Direct Plan Growth?"
+        ],
+        "verbose": [
+          "The company publishes a risk category for every fund and I would like to know which category HDFC ELSS Tax Saver Fund Direct Plan Growth currently sits in."
+        ],
+        "jargon": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth riskometer category / SEBI scale"
+        ],
+        "keywords": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS risk level category"
+        ]
+      }
+    },
+    "ELSS|aum": {
+      "scheme": "ELSS",
+      "field": "aum",
+      "template_query": "What is the fund size AUM of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth fund size"
+        ],
+        "colloquial": [
+          "how big is HDFC ELSS Tax Saver Fund Direct Plan Growth these days?"
+        ],
+        "verbose": [
+          "I am trying to get a sense of how much money is sitting in HDFC ELSS Tax Saver Fund Direct Plan Growth overall, so that I can judge whether it is a large or small fund."
+        ],
+        "jargon": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth AUM / corpus size"
+        ],
+        "keywords": [
+          "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS total AUM crore"
+        ]
+      }
+    },
+    "Small Cap|expense_ratio": {
+      "scheme": "Small Cap",
+      "field": "expense_ratio",
+      "template_query": "What is the expense ratio of HDFC Small Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Small Cap Fund Direct Growth expense ratio"
+        ],
+        "colloquial": [
+          "how much do they charge in fees for HDFC Small Cap Fund Direct Growth?"
+        ],
+        "verbose": [
+          "I have been looking at HDFC Small Cap Fund Direct Growth and I am trying to work out what the annual charges work out at."
+        ],
+        "jargon": [
+          "HDFC Small Cap Fund Direct Growth TER / expense ratio"
+        ],
+        "keywords": [
+          "HDFC Small Cap Fund Direct Growth Small Cap annual fee %"
+        ]
+      }
+    },
+    "Small Cap|exit_load": {
+      "scheme": "Small Cap",
+      "field": "exit_load",
+      "template_query": "What is the exit load of HDFC Small Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Small Cap Fund Direct Growth exit load"
+        ],
+        "colloquial": [
+          "if I sell HDFC Small Cap Fund Direct Growth early, do I lose anything?"
+        ],
+        "verbose": [
+          "I am wondering whether there is any penalty if I redeem HDFC Small Cap Fund Direct Growth before it has been running for a while."
+        ],
+        "jargon": [
+          "HDFC Small Cap Fund Direct Growth exit load schedule, 1yr cut-off"
+        ],
+        "keywords": [
+          "HDFC Small Cap Fund Direct Growth Small Cap exit load redemption charge"
+        ]
+      }
+    },
+    "Small Cap|min_sip": {
+      "scheme": "Small Cap",
+      "field": "min_sip",
+      "template_query": "What is the minimum SIP amount of HDFC Small Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Small Cap Fund Direct Growth minimum SIP"
+        ],
+        "colloquial": [
+          "what's the smallest amount I can put in each month for HDFC Small Cap Fund Direct Growth?"
+        ],
+        "verbose": [
+          "I would like to start investing a small amount every month in HDFC Small Cap Fund Direct Growth but I need to know the smallest amount that is actually allowed."
+        ],
+        "jargon": [
+          "HDFC Small Cap Fund Direct Growth min SIP / monthly instalment"
+        ],
+        "keywords": [
+          "HDFC Small Cap Fund Direct Growth Small Cap SIP minimum amount"
+        ]
+      }
+    },
+    "Small Cap|min_lumpsum": {
+      "scheme": "Small Cap",
+      "field": "min_lumpsum",
+      "template_query": "What is the minimum lump sum investment of HDFC Small Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Small Cap Fund Direct Growth minimum lump sum"
+        ],
+        "colloquial": [
+          "if I put money in all at once instead, what's the least I can do for HDFC Small Cap Fund Direct Growth?"
+        ],
+        "verbose": [
+          "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC Small Cap Fund Direct Growth?"
+        ],
+        "jargon": [
+          "HDFC Small Cap Fund Direct Growth min lumpsum threshold"
+        ],
+        "keywords": [
+          "HDFC Small Cap Fund Direct Growth Small Cap one-time investment minimum"
+        ]
+      }
+    },
+    "Small Cap|benchmark": {
+      "scheme": "Small Cap",
+      "field": "benchmark",
+      "template_query": "What is the benchmark of HDFC Small Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Small Cap Fund Direct Growth benchmark"
+        ],
+        "colloquial": [
+          "what is HDFC Small Cap Fund Direct Growth actually measured against?"
+        ],
+        "verbose": [
+          "I keep seeing references to an index that HDFC Small Cap Fund Direct Growth is judged against and I would like to know which one it actually is."
+        ],
+        "jargon": [
+          "HDFC Small Cap Fund Direct Growth benchmark index / TRI"
+        ],
+        "keywords": [
+          "HDFC Small Cap Fund Direct Growth Small Cap benchmark index name"
+        ]
+      }
+    },
+    "Small Cap|riskometer": {
+      "scheme": "Small Cap",
+      "field": "riskometer",
+      "template_query": "What is the riskometer level of HDFC Small Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Small Cap Fund Direct Growth riskometer"
+        ],
+        "colloquial": [
+          "how risky does the company itself rate HDFC Small Cap Fund Direct Growth?"
+        ],
+        "verbose": [
+          "The company publishes a risk category for every fund and I would like to know which category HDFC Small Cap Fund Direct Growth currently sits in."
+        ],
+        "jargon": [
+          "HDFC Small Cap Fund Direct Growth riskometer category / SEBI scale"
+        ],
+        "keywords": [
+          "HDFC Small Cap Fund Direct Growth Small Cap risk level category"
+        ]
+      }
+    },
+    "Small Cap|aum": {
+      "scheme": "Small Cap",
+      "field": "aum",
+      "template_query": "What is the fund size AUM of HDFC Small Cap Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Small Cap Fund Direct Growth fund size"
+        ],
+        "colloquial": [
+          "how big is HDFC Small Cap Fund Direct Growth these days?"
+        ],
+        "verbose": [
+          "I am trying to get a sense of how much money is sitting in HDFC Small Cap Fund Direct Growth overall, so that I can judge whether it is a large or small fund."
+        ],
+        "jargon": [
+          "HDFC Small Cap Fund Direct Growth AUM / corpus size"
+        ],
+        "keywords": [
+          "HDFC Small Cap Fund Direct Growth Small Cap total AUM crore"
+        ]
+      }
+    },
+    "Balanced Advantage|expense_ratio": {
+      "scheme": "Balanced Advantage",
+      "field": "expense_ratio",
+      "template_query": "What is the expense ratio of HDFC Balanced Advantage Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Balanced Advantage Fund Direct Growth expense ratio"
+        ],
+        "colloquial": [
+          "how much do they charge in fees for HDFC Balanced Advantage Fund Direct Growth?"
+        ],
+        "verbose": [
+          "I have been looking at HDFC Balanced Advantage Fund Direct Growth and I am trying to work out what the annual charges work out at."
+        ],
+        "jargon": [
+          "HDFC Balanced Advantage Fund Direct Growth TER / expense ratio"
+        ],
+        "keywords": [
+          "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage annual fee %"
+        ]
+      }
+    },
+    "Balanced Advantage|exit_load": {
+      "scheme": "Balanced Advantage",
+      "field": "exit_load",
+      "template_query": "What is the exit load of HDFC Balanced Advantage Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Balanced Advantage Fund Direct Growth exit load"
+        ],
+        "colloquial": [
+          "if I sell HDFC Balanced Advantage Fund Direct Growth early, do I lose anything?"
+        ],
+        "verbose": [
+          "I am wondering whether there is any penalty if I redeem HDFC Balanced Advantage Fund Direct Growth before it has been running for a while."
+        ],
+        "jargon": [
+          "HDFC Balanced Advantage Fund Direct Growth exit load schedule, 1yr cut-off"
+        ],
+        "keywords": [
+          "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage exit load redemption charge"
+        ]
+      }
+    },
+    "Balanced Advantage|min_sip": {
+      "scheme": "Balanced Advantage",
+      "field": "min_sip",
+      "template_query": "What is the minimum SIP amount of HDFC Balanced Advantage Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Balanced Advantage Fund Direct Growth minimum SIP"
+        ],
+        "colloquial": [
+          "what's the smallest amount I can put in each month for HDFC Balanced Advantage Fund Direct Growth?"
+        ],
+        "verbose": [
+          "I would like to start investing a small amount every month in HDFC Balanced Advantage Fund Direct Growth but I need to know the smallest amount that is actually allowed."
+        ],
+        "jargon": [
+          "HDFC Balanced Advantage Fund Direct Growth min SIP / monthly instalment"
+        ],
+        "keywords": [
+          "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage SIP minimum amount"
+        ]
+      }
+    },
+    "Balanced Advantage|min_lumpsum": {
+      "scheme": "Balanced Advantage",
+      "field": "min_lumpsum",
+      "template_query": "What is the minimum lump sum investment of HDFC Balanced Advantage Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Balanced Advantage Fund Direct Growth minimum lump sum"
+        ],
+        "colloquial": [
+          "if I put money in all at once instead, what's the least I can do for HDFC Balanced Advantage Fund Direct Growth?"
+        ],
+        "verbose": [
+          "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC Balanced Advantage Fund Direct Growth?"
+        ],
+        "jargon": [
+          "HDFC Balanced Advantage Fund Direct Growth min lumpsum threshold"
+        ],
+        "keywords": [
+          "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage one-time investment minimum"
+        ]
+      }
+    },
+    "Balanced Advantage|benchmark": {
+      "scheme": "Balanced Advantage",
+      "field": "benchmark",
+      "template_query": "What is the benchmark of HDFC Balanced Advantage Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Balanced Advantage Fund Direct Growth benchmark"
+        ],
+        "colloquial": [
+          "what is HDFC Balanced Advantage Fund Direct Growth actually measured against?"
+        ],
+        "verbose": [
+          "I keep seeing references to an index that HDFC Balanced Advantage Fund Direct Growth is judged against and I would like to know which one it actually is."
+        ],
+        "jargon": [
+          "HDFC Balanced Advantage Fund Direct Growth benchmark index / TRI"
+        ],
+        "keywords": [
+          "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage benchmark index name"
+        ]
+      }
+    },
+    "Balanced Advantage|riskometer": {
+      "scheme": "Balanced Advantage",
+      "field": "riskometer",
+      "template_query": "What is the riskometer level of HDFC Balanced Advantage Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Balanced Advantage Fund Direct Growth riskometer"
+        ],
+        "colloquial": [
+          "how risky does the company itself rate HDFC Balanced Advantage Fund Direct Growth?"
+        ],
+        "verbose": [
+          "The company publishes a risk category for every fund and I would like to know which category HDFC Balanced Advantage Fund Direct Growth currently sits in."
+        ],
+        "jargon": [
+          "HDFC Balanced Advantage Fund Direct Growth riskometer category / SEBI scale"
+        ],
+        "keywords": [
+          "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage risk level category"
+        ]
+      }
+    },
+    "Balanced Advantage|aum": {
+      "scheme": "Balanced Advantage",
+      "field": "aum",
+      "template_query": "What is the fund size AUM of HDFC Balanced Advantage Fund Direct Growth?",
+      "paraphrases": {
+        "terse": [
+          "HDFC Balanced Advantage Fund Direct Growth fund size"
+        ],
+        "colloquial": [
+          "how big is HDFC Balanced Advantage Fund Direct Growth these days?"
+        ],
+        "verbose": [
+          "I am trying to get a sense of how much money is sitting in HDFC Balanced Advantage Fund Direct Growth overall, so that I can judge whether it is a large or small fund."
+        ],
+        "jargon": [
+          "HDFC Balanced Advantage Fund Direct Growth AUM / corpus size"
+        ],
+        "keywords": [
+          "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage total AUM crore"
+        ]
+      }
+    }
+  }
+}

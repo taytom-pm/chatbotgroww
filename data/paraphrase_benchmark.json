@@ -1,0 +1,2193 @@
+{
+  "caveats": "This measures the SHIPPED hybrid retriever (dense + BM25, RRF k=60, scheme boost, field boost), unlike scripts/benchmark_retrieval.py which is dense-only. Gold labels are the same 35 (scheme, field) pairs, so differences between rows are attributable to WORDING alone. READ THE ROWS IN TWO GROUPS, because they measure different things. (1) template, terse, jargon, keywords: these all contain the field's own vocabulary, so they are a fair 'same question, different words' comparison - this is where phrasing robustness shows. (2) colloquial, verbose: these describe the concept WITHOUT naming the field ('how much do they charge in fees' for expense_ratio), so they additionally demand implicit intent mapping that no retrieval system can do from surface tokens alone. Their low scores are a deliberate worst case, not an estimate of real-world failure - a human reader also has to know that 'penalty for redeeming early' means exit load. Quote the colloquial/verbose numbers as a bound, never as an accuracy figure. Separately, the paraphrases are synthetic and were produced once and cached, so this is one sample of generator output, not a distribution, and it cannot show a failure mode the author did not think to produce.",
+  "measurement": {
+    "retrieval": "shipped HybridRetriever, top-8 candidates per query",
+    "hit_rule": "chunk's scheme_short == gold scheme AND field_name == gold field",
+    "generated_by": "hand-authored seed (no LLM)",
+    "how_to_read": "template/terse/jargon/keywords carry the field's own vocabulary and measure phrasing robustness. colloquial/verbose do not name the field and measure implicit intent mapping as well, which is a deliberately unfair comparison for a lexical retriever."
+  },
+  "summary": {
+    "template": {
+      "n": 35,
+      "top1": 0.9429,
+      "top3": 1.0,
+      "top5": 1.0
+    },
+    "terse": {
+      "n": 35,
+      "top1": 0.7429,
+      "top3": 0.8286,
+      "top5": 0.8857
+    },
+    "colloquial": {
+      "n": 35,
+      "top1": 0.1714,
+      "top3": 0.5143,
+      "top5": 0.6286
+    },
+    "verbose": {
+      "n": 35,
+      "top1": 0.2286,
+      "top3": 0.5429,
+      "top5": 0.6286
+    },
+    "jargon": {
+      "n": 35,
+      "top1": 0.8857,
+      "top3": 0.9429,
+      "top5": 0.9714
+    },
+    "keywords": {
+      "n": 35,
+      "top1": 0.8571,
+      "top3": 0.9714,
+      "top5": 0.9714
+    }
+  },
+  "miss_breakdown": {
+    "template": {
+      "miss_wrong_scheme": 0,
+      "miss_wrong_field": 2,
+      "miss_prose_not_fact": 1
+    },
+    "terse": {
+      "miss_wrong_scheme": 0,
+      "miss_wrong_field": 9,
+      "miss_prose_not_fact": 4
+    },
+    "colloquial": {
+      "miss_wrong_scheme": 0,
+      "miss_wrong_field": 29,
+      "miss_prose_not_fact": 3
+    },
+    "verbose": {
+      "miss_wrong_scheme": 3,
+      "miss_wrong_field": 24,
+      "miss_prose_not_fact": 6
+    },
+    "jargon": {
+      "miss_wrong_scheme": 0,
+      "miss_wrong_field": 4,
+      "miss_prose_not_fact": 4
+    },
+    "keywords": {
+      "miss_wrong_scheme": 0,
+      "miss_wrong_field": 5,
+      "miss_prose_not_fact": 0
+    }
+  },
+  "per_style": {
+    "template": [
+      {
+        "query": "What is the expense ratio of HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "What is the exit load of HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "What is the minimum SIP amount of HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "What is the minimum lump sum investment of HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "What is the benchmark of HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "What is the riskometer level of HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "What is the fund size AUM of HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "aum"
+      },
+      {
+        "query": "What is the expense ratio of HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "What is the exit load of HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "What is the minimum SIP amount of HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "What is the minimum lump sum investment of HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "What is the benchmark of HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "What is the riskometer level of HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "What is the fund size AUM of HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "aum"
+      },
+      {
+        "query": "What is the expense ratio of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "What is the exit load of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "What is the minimum SIP amount of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "What is the minimum lump sum investment of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "What is the benchmark of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "What is the riskometer level of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "What is the fund size AUM of HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "aum"
+      },
+      {
+        "query": "What is the expense ratio of HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "What is the exit load of HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "What is the minimum SIP amount of HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "What is the minimum lump sum investment of HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "What is the benchmark of HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "What is the riskometer level of HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "What is the fund size AUM of HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "aum"
+      },
+      {
+        "query": "What is the expense ratio of HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "What is the exit load of HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "What is the minimum SIP amount of HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "What is the minimum lump sum investment of HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": ""
+      },
+      {
+        "query": "What is the benchmark of HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "What is the riskometer level of HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "What is the fund size AUM of HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "aum"
+      }
+    ],
+    "terse": [
+      {
+        "query": "HDFC Large Cap Fund Direct Growth expense ratio",
+        "gold_scheme": "Large Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth exit load",
+        "gold_scheme": "Large Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth minimum SIP",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth minimum lump sum",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Large Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth benchmark",
+        "gold_scheme": "Large Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth riskometer",
+        "gold_scheme": "Large Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth fund size",
+        "gold_scheme": "Large Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "fund_house"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth expense ratio",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth exit load",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth minimum SIP",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth minimum lump sum",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "sub_category"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth benchmark",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth riskometer",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth fund size",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "sub_category"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth expense ratio",
+        "gold_scheme": "ELSS",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth exit load",
+        "gold_scheme": "ELSS",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth minimum SIP",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth minimum lump sum",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "ELSS",
+        "top1_field": ""
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth benchmark",
+        "gold_scheme": "ELSS",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth riskometer",
+        "gold_scheme": "ELSS",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth fund size",
+        "gold_scheme": "ELSS",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "aum"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth expense ratio",
+        "gold_scheme": "Small Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth exit load",
+        "gold_scheme": "Small Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth minimum SIP",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth minimum lump sum",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Small Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth benchmark",
+        "gold_scheme": "Small Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth riskometer",
+        "gold_scheme": "Small Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth fund size",
+        "gold_scheme": "Small Cap",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "aum"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth expense ratio",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth exit load",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth minimum SIP",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth minimum lump sum",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": ""
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth benchmark",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "fund_house"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth riskometer",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth fund size",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "fund_house"
+      }
+    ],
+    "colloquial": [
+      {
+        "query": "how much do they charge in fees for HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "expense_ratio",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "if I sell HDFC Large Cap Fund Direct Growth early, do I lose anything?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "what's the smallest amount I can put in each month for HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "if I put money in all at once instead, what's the least I can do for HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "objective"
+      },
+      {
+        "query": "what is HDFC Large Cap Fund Direct Growth actually measured against?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Large Cap",
+        "top1_field": "rating"
+      },
+      {
+        "query": "how risky does the company itself rate HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "rating"
+      },
+      {
+        "query": "how big is HDFC Large Cap Fund Direct Growth these days?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Large Cap",
+        "top1_field": "sub_category"
+      },
+      {
+        "query": "how much do they charge in fees for HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "expense_ratio",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "if I sell HDFC Flexi Cap Direct Plan Growth early, do I lose anything?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "what's the smallest amount I can put in each month for HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "if I put money in all at once instead, what's the least I can do for HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "what is HDFC Flexi Cap Direct Plan Growth actually measured against?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "rating"
+      },
+      {
+        "query": "how risky does the company itself rate HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "sub_category"
+      },
+      {
+        "query": "how big is HDFC Flexi Cap Direct Plan Growth these days?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "rating"
+      },
+      {
+        "query": "how much do they charge in fees for HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "expense_ratio",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "if I sell HDFC ELSS Tax Saver Fund Direct Plan Growth early, do I lose anything?",
+        "gold_scheme": "ELSS",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "what's the smallest amount I can put in each month for HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "ELSS",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "if I put money in all at once instead, what's the least I can do for HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "lock_in"
+      },
+      {
+        "query": "what is HDFC ELSS Tax Saver Fund Direct Plan Growth actually measured against?",
+        "gold_scheme": "ELSS",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "ELSS",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "how risky does the company itself rate HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "how big is HDFC ELSS Tax Saver Fund Direct Plan Growth these days?",
+        "gold_scheme": "ELSS",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "ELSS",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "how much do they charge in fees for HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "expense_ratio",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "if I sell HDFC Small Cap Fund Direct Growth early, do I lose anything?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "what's the smallest amount I can put in each month for HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Small Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "if I put money in all at once instead, what's the least I can do for HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "what is HDFC Small Cap Fund Direct Growth actually measured against?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Small Cap",
+        "top1_field": "rating"
+      },
+      {
+        "query": "how risky does the company itself rate HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "rating"
+      },
+      {
+        "query": "how big is HDFC Small Cap Fund Direct Growth these days?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Small Cap",
+        "top1_field": "sub_category"
+      },
+      {
+        "query": "how much do they charge in fees for HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "expense_ratio",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "if I sell HDFC Balanced Advantage Fund Direct Growth early, do I lose anything?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "exit_load",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "what's the smallest amount I can put in each month for HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "if I put money in all at once instead, what's the least I can do for HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": ""
+      },
+      {
+        "query": "what is HDFC Balanced Advantage Fund Direct Growth actually measured against?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "how risky does the company itself rate HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "how big is HDFC Balanced Advantage Fund Direct Growth these days?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      }
+    ],
+    "verbose": [
+      {
+        "query": "I have been looking at HDFC Large Cap Fund Direct Growth and I am trying to work out what the annual charges work out at.",
+        "gold_scheme": "Large Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "I am wondering whether there is any penalty if I redeem HDFC Large Cap Fund Direct Growth before it has been running for a while.",
+        "gold_scheme": "Large Cap",
+        "gold_field": "exit_load",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "tax_implication"
+      },
+      {
+        "query": "I would like to start investing a small amount every month in HDFC Large Cap Fund Direct Growth but I need to know the smallest amount that is actually allowed.",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Small Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC Large Cap Fund Direct Growth?",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "objective"
+      },
+      {
+        "query": "I keep seeing references to an index that HDFC Large Cap Fund Direct Growth is judged against and I would like to know which one it actually is.",
+        "gold_scheme": "Large Cap",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "The company publishes a risk category for every fund and I would like to know which category HDFC Large Cap Fund Direct Growth currently sits in.",
+        "gold_scheme": "Large Cap",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "category"
+      },
+      {
+        "query": "I am trying to get a sense of how much money is sitting in HDFC Large Cap Fund Direct Growth overall, so that I can judge whether it is a large or small fund.",
+        "gold_scheme": "Large Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Large Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "I have been looking at HDFC Flexi Cap Direct Plan Growth and I am trying to work out what the annual charges work out at.",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "I am wondering whether there is any penalty if I redeem HDFC Flexi Cap Direct Plan Growth before it has been running for a while.",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "exit_load",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "tax_implication"
+      },
+      {
+        "query": "I would like to start investing a small amount every month in HDFC Flexi Cap Direct Plan Growth but I need to know the smallest amount that is actually allowed.",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Small Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC Flexi Cap Direct Plan Growth?",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "I keep seeing references to an index that HDFC Flexi Cap Direct Plan Growth is judged against and I would like to know which one it actually is.",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "The company publishes a risk category for every fund and I would like to know which category HDFC Flexi Cap Direct Plan Growth currently sits in.",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "sub_category"
+      },
+      {
+        "query": "I am trying to get a sense of how much money is sitting in HDFC Flexi Cap Direct Plan Growth overall, so that I can judge whether it is a large or small fund.",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "I have been looking at HDFC ELSS Tax Saver Fund Direct Plan Growth and I am trying to work out what the annual charges work out at.",
+        "gold_scheme": "ELSS",
+        "gold_field": "expense_ratio",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "I am wondering whether there is any penalty if I redeem HDFC ELSS Tax Saver Fund Direct Plan Growth before it has been running for a while.",
+        "gold_scheme": "ELSS",
+        "gold_field": "exit_load",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "ELSS",
+        "top1_field": "tax_implication"
+      },
+      {
+        "query": "I would like to start investing a small amount every month in HDFC ELSS Tax Saver Fund Direct Plan Growth but I need to know the smallest amount that is actually allowed.",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "ELSS",
+        "top1_field": ""
+      },
+      {
+        "query": "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC ELSS Tax Saver Fund Direct Plan Growth?",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "I keep seeing references to an index that HDFC ELSS Tax Saver Fund Direct Plan Growth is judged against and I would like to know which one it actually is.",
+        "gold_scheme": "ELSS",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "The company publishes a risk category for every fund and I would like to know which category HDFC ELSS Tax Saver Fund Direct Plan Growth currently sits in.",
+        "gold_scheme": "ELSS",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "I am trying to get a sense of how much money is sitting in HDFC ELSS Tax Saver Fund Direct Plan Growth overall, so that I can judge whether it is a large or small fund.",
+        "gold_scheme": "ELSS",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "ELSS",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "I have been looking at HDFC Small Cap Fund Direct Growth and I am trying to work out what the annual charges work out at.",
+        "gold_scheme": "Small Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "I am wondering whether there is any penalty if I redeem HDFC Small Cap Fund Direct Growth before it has been running for a while.",
+        "gold_scheme": "Small Cap",
+        "gold_field": "exit_load",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "tax_implication"
+      },
+      {
+        "query": "I would like to start investing a small amount every month in HDFC Small Cap Fund Direct Growth but I need to know the smallest amount that is actually allowed.",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Small Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC Small Cap Fund Direct Growth?",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "objective"
+      },
+      {
+        "query": "I keep seeing references to an index that HDFC Small Cap Fund Direct Growth is judged against and I would like to know which one it actually is.",
+        "gold_scheme": "Small Cap",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "The company publishes a risk category for every fund and I would like to know which category HDFC Small Cap Fund Direct Growth currently sits in.",
+        "gold_scheme": "Small Cap",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "category"
+      },
+      {
+        "query": "I am trying to get a sense of how much money is sitting in HDFC Small Cap Fund Direct Growth overall, so that I can judge whether it is a large or small fund.",
+        "gold_scheme": "Small Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Small Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "I have been looking at HDFC Balanced Advantage Fund Direct Growth and I am trying to work out what the annual charges work out at.",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "I am wondering whether there is any penalty if I redeem HDFC Balanced Advantage Fund Direct Growth before it has been running for a while.",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "exit_load",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "tax_implication"
+      },
+      {
+        "query": "I would like to start investing a small amount every month in HDFC Balanced Advantage Fund Direct Growth but I need to know the smallest amount that is actually allowed.",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_sip",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": ""
+      },
+      {
+        "query": "Rather than investing monthly, I am considering putting a single amount in, so what is the smallest one-time investment allowed for HDFC Balanced Advantage Fund Direct Growth?",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": ""
+      },
+      {
+        "query": "I keep seeing references to an index that HDFC Balanced Advantage Fund Direct Growth is judged against and I would like to know which one it actually is.",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "benchmark",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "The company publishes a risk category for every fund and I would like to know which category HDFC Balanced Advantage Fund Direct Growth currently sits in.",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "riskometer",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "category"
+      },
+      {
+        "query": "I am trying to get a sense of how much money is sitting in HDFC Balanced Advantage Fund Direct Growth overall, so that I can judge whether it is a large or small fund.",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      }
+    ],
+    "jargon": [
+      {
+        "query": "HDFC Large Cap Fund Direct Growth TER / expense ratio",
+        "gold_scheme": "Large Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth exit load schedule, 1yr cut-off",
+        "gold_scheme": "Large Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth min SIP / monthly instalment",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth min lumpsum threshold",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth benchmark index / TRI",
+        "gold_scheme": "Large Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth riskometer category / SEBI scale",
+        "gold_scheme": "Large Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth AUM / corpus size",
+        "gold_scheme": "Large Cap",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "aum"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth TER / expense ratio",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth exit load schedule, 1yr cut-off",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth min SIP / monthly instalment",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth min lumpsum threshold",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth benchmark index / TRI",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth riskometer category / SEBI scale",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth AUM / corpus size",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "aum"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth TER / expense ratio",
+        "gold_scheme": "ELSS",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth exit load schedule, 1yr cut-off",
+        "gold_scheme": "ELSS",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth min SIP / monthly instalment",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth min lumpsum threshold",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": false,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": ""
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth benchmark index / TRI",
+        "gold_scheme": "ELSS",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth riskometer category / SEBI scale",
+        "gold_scheme": "ELSS",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth AUM / corpus size",
+        "gold_scheme": "ELSS",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "aum"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth TER / expense ratio",
+        "gold_scheme": "Small Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth exit load schedule, 1yr cut-off",
+        "gold_scheme": "Small Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth min SIP / monthly instalment",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth min lumpsum threshold",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": ""
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth benchmark index / TRI",
+        "gold_scheme": "Small Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth riskometer category / SEBI scale",
+        "gold_scheme": "Small Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth AUM / corpus size",
+        "gold_scheme": "Small Cap",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "aum"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth TER / expense ratio",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth exit load schedule, 1yr cut-off",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth min SIP / monthly instalment",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth min lumpsum threshold",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_lumpsum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": ""
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth benchmark index / TRI",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth riskometer category / SEBI scale",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth AUM / corpus size",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "aum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "aum"
+      }
+    ],
+    "keywords": [
+      {
+        "query": "HDFC Large Cap Fund Direct Growth Large Cap annual fee %",
+        "gold_scheme": "Large Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth Large Cap exit load redemption charge",
+        "gold_scheme": "Large Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth Large Cap SIP minimum amount",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth Large Cap one-time investment minimum",
+        "gold_scheme": "Large Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth Large Cap benchmark index name",
+        "gold_scheme": "Large Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth Large Cap risk level category",
+        "gold_scheme": "Large Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Large Cap Fund Direct Growth Large Cap total AUM crore",
+        "gold_scheme": "Large Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Large Cap",
+        "top1_field": "total_aum"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth Flexi Cap annual fee %",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth Flexi Cap exit load redemption charge",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth Flexi Cap SIP minimum amount",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth Flexi Cap one-time investment minimum",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth Flexi Cap benchmark index name",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth Flexi Cap risk level category",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Flexi Cap Direct Plan Growth Flexi Cap total AUM crore",
+        "gold_scheme": "Flexi Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": false,
+        "top5": false,
+        "top1_scheme": "Flexi Cap",
+        "top1_field": "total_aum"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS annual fee %",
+        "gold_scheme": "ELSS",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS exit load redemption charge",
+        "gold_scheme": "ELSS",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS SIP minimum amount",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS one-time investment minimum",
+        "gold_scheme": "ELSS",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS benchmark index name",
+        "gold_scheme": "ELSS",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS risk level category",
+        "gold_scheme": "ELSS",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC ELSS Tax Saver Fund Direct Plan Growth ELSS total AUM crore",
+        "gold_scheme": "ELSS",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "ELSS",
+        "top1_field": "total_aum"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth Small Cap annual fee %",
+        "gold_scheme": "Small Cap",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth Small Cap exit load redemption charge",
+        "gold_scheme": "Small Cap",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth Small Cap SIP minimum amount",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth Small Cap one-time investment minimum",
+        "gold_scheme": "Small Cap",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth Small Cap benchmark index name",
+        "gold_scheme": "Small Cap",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth Small Cap risk level category",
+        "gold_scheme": "Small Cap",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Small Cap Fund Direct Growth Small Cap total AUM crore",
+        "gold_scheme": "Small Cap",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Small Cap",
+        "top1_field": "total_aum"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage annual fee %",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "expense_ratio",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "expense_ratio"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage exit load redemption charge",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "exit_load",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "exit_load"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage SIP minimum amount",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_sip",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "min_sip"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage one-time investment minimum",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "min_lumpsum",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "min_lumpsum"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage benchmark index name",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "benchmark",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "benchmark"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage risk level category",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "riskometer",
+        "top1": true,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "riskometer"
+      },
+      {
+        "query": "HDFC Balanced Advantage Fund Direct Growth Balanced Advantage total AUM crore",
+        "gold_scheme": "Balanced Advantage",
+        "gold_field": "aum",
+        "top1": false,
+        "top3": true,
+        "top5": true,
+        "top1_scheme": "Balanced Advantage",
+        "top1_field": "total_aum"
+      }
+    ]
+  }
+}

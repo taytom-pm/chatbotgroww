@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the expense ratio of HDFC Large Cap Fund?",
+    "topic": "expense ratio (fact)",
+    "answer": "HDFC Large Cap Fund Direct Growth - Expense ratio: 1.03%.",
+    "citation": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "last_updated": "2026-09-27T07:12:56+00:00",
+    "intent": "expense_ratio",
+    "kind": "fact",
+    "refused": false
+  },
+  {
+    "question": "What is the exit load of HDFC ELSS Tax Saver Fund?",
+    "topic": "exit load (fact)",
+    "answer": "HDFC ELSS Tax Saver Fund Direct Plan Growth - Exit load: Nil.",
+    "citation": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "last_updated": "2026-09-27T07:13:00+00:00",
+    "intent": "exit_load",
+    "kind": "fact",
+    "refused": false
+  },
+  {
+    "question": "Is there a lock-in period on HDFC ELSS Tax Saver Fund?",
+    "topic": "ELSS lock-in (fact)",
+    "answer": "HDFC ELSS Tax Saver Fund Direct Plan Growth - Lock-in period: 3Y (as stated on the scheme page).",
+    "citation": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+    "last_updated": "2026-09-27T07:13:00+00:00",
+    "intent": "lock_in",
+    "kind": "fact",
+    "refused": false
+  },
+  {
+    "question": "What is the minimum SIP for HDFC Balanced Advantage Fund?",
+    "topic": "minimum SIP (fact)",
+    "answer": "HDFC Balanced Advantage Fund Direct Growth - Min. for SIP: ₹100.",
+    "citation": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+    "last_updated": "2026-09-27T07:13:04+00:00",
+    "intent": "min_sip",
+    "kind": "fact",
+    "refused": false
+  },
+  {
+    "question": "What is the benchmark of HDFC Balanced Advantage Fund?",
+    "topic": "benchmark (fact)",
+    "answer": "HDFC Balanced Advantage Fund Direct Growth - Benchmark: NIFTY 50 Hybrid Composite Debt 50:50 Index.",
+    "citation": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+    "last_updated": "2026-09-27T07:13:04+00:00",
+    "intent": "benchmark",
+    "kind": "fact",
+    "refused": false
+  },
+  {
+    "question": "What is the riskometer level of HDFC Flexi Cap Fund?",
+    "topic": "riskometer (fact)",
+    "answer": "HDFC Equity Fund Direct Growth - Riskometer: Very High Risk.",
+    "citation": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+    "last_updated": "2026-09-27T07:12:58+00:00",
+    "intent": "riskometer",
+    "kind": "fact",
+    "refused": false
+  },
+  {
+    "question": "Who manages HDFC Large Cap Fund?",
+    "topic": "fund manager (fact)",
+    "answer": "HDFC Large Cap Fund Direct Growth is managed by Rahul Baijal (Jul 2022 - Present). The page also lists Dhruv Muchhal.",
+    "citation": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+    "last_updated": "2026-09-27T07:12:56+00:00",
+    "intent": "manager",
+    "kind": "fact",
+    "refused": false
+  },
+  {
+    "question": "How do I download my capital gains statement?",
+    "topic": "statement guidance",
+    "answer": "Account statements are not published on a fund page - they are generated inside your own account. The official help centre covers downloading statements, capital gains statements and tax documents. This assistant never asks for your PAN, folio number or OTP.",
+    "citation": "https://groww.in/help",
+    "last_updated": "2026-09-27T07:13:04+00:00",
+    "intent": "statement",
+    "kind": "guidance",
+    "refused": false
+  },
+  {
+    "question": "Should I buy HDFC Small Cap Fund?",
+    "topic": "advice refusal",
+    "answer": "I only answer published facts about HDFC Mutual Fund schemes, so I can't say whether you should buy, sell or hold anything. For a suitability view, speak to a SEBI-registered investment adviser. Educational reference: https://groww.in/mutual-funds",
+    "citation": "https://groww.in/mutual-funds",
+    "last_updated": "2026-09-27T07:13:04+00:00",
+    "intent": "advice",
+    "kind": "advice_refusal",
+    "refused": true
+  },
+  {
+    "question": "My PAN is ABCDE1234F, check my returns",
+    "topic": "PII refusal",
+    "answer": "I can't accept personal identifiers. Please don't share PAN, Aadhaar, account or folio numbers, OTPs, IFSC, card numbers, email addresses or phone numbers. This assistant only answers published fund facts and never needs personal data, so nothing from that message was stored - see https://groww.in/privacy-policy for how personal data is handled.",
+    "citation": "https://groww.in/privacy-policy",
+    "last_updated": "",
+    "intent": "unknown",
+    "kind": "pii",
+    "refused": true
+  }
+]

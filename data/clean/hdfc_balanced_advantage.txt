@@ -1,0 +1,59 @@
+SOURCE_URL: https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth
+SCHEME: HDFC Balanced Advantage Fund Direct Growth
+CATEGORY: Hybrid Balanced Advantage
+RETRIEVED_AT: 2026-09-27T07:13:04+00:00
+
+== FACTS ==
+[Key facts] riskometer | Riskometer | Very High Risk
+[Key facts] nav | NAV | ₹557.73
+[Key facts] min_sip | Min. for SIP | ₹100
+[Key facts] aum | Fund size (AUM) | ₹1,07,295.79 Cr
+[Key facts] expense_ratio | Expense ratio | 0.78%
+[Key facts] rating | Rating | 5
+[Key facts] min_lumpsum | Min. for 1st investment | ₹100
+[Key facts] min_additional | Min. for 2nd investment | ₹100
+[Key facts] category | Fund category | Hybrid
+[Key facts] sub_category | Sub-category | Dynamic Asset Allocation
+[Fees, exit load and tax] exit_load | Exit load | Exit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year.
+[Fees, exit load and tax] stamp_duty | Stamp duty on investment | 0.005% (from July 1st, 2020)
+[Fees, exit load and tax] tax_implication | Tax implication | If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.
+[Objective] objective | Investment objective | The Scheme seeks to provide long term capital appreciation / income from a dynamic mix of equity and debt investments.
+[Benchmark] benchmark | Benchmark | NIFTY 50 Hybrid Composite Debt 50:50 Index
+[Scheme details] fund_house | Fund house | HDFC Mutual Fund
+[Scheme details] rank | Rank (total assets) | #2 in India
+[Scheme details] total_aum | Total AUM | ₹9,86,236.84 Cr
+[Scheme details] incorporation_date | Date of Incorporation | 10 Dec 1999
+[Scheme details] launch_date | Launch Date | 10 Dec 1999
+[Scheme details] custodian | Custodian | HDFC Bank
+[Scheme details] rta | Registrar & Transfer Agent | Cams
+
+== PROSE ==
+[Fees, exit load and tax] Exit load revision history
+Historic exit load changes listed on the scheme page: 08 May 2015: Exit load of 1% if redeemed within 1 year | 18 Dec 2014: Exit load of 2% if redeemed within 12 months, 1% if redeemed after 12 months but within 24 months and 0.50% if redeemed after 24 months but within 36 months | 01 Jan 2013: Exit load of 1% if redeemed within 1 year.
+[Glossary] Glossary: Absolute returns
+The total return of a mutual fund over a given period.
+[Glossary] Glossary: Expense ratio
+A fee payable to a mutual fund house for managing your mutual fund investments. It is the total percentage of a company's fund assets used for administrative, management, advertising, and other expenses.
+[Glossary] Glossary: Tax
+A percentage of your capital gains payable to the government upon exiting your mutual fund investments. Taxation is categorized as long-term capital gains (LTCG) and short-term capital gains (STCG) depending on your holding period and the type of fund.
+[Glossary] Glossary: Exit load
+A fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment.
+[Glossary] Glossary: Stamp duty
+A form of tax payable for the purchase or sale of an asset or security.
+[About the scheme] About the scheme
+HDFC Balanced Advantage Fund Direct Growth is a Hybrid Mutual Fund Scheme launched by HDFC Mutual Fund. This scheme was made available to investors on 10 Dec 1999. Anil Bamboli is the Current Fund Manager of HDFC Balanced Advantage Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of ₹9,86,237 Cr and the Latest NAV as of 25 Sep 2026 is ₹557.73.
+The HDFC Balanced Advantage Fund Direct Growth is rated Very High risk. Minimum SIP Investment is set to ₹100. Minimum Lumpsum Investment is ₹100. Exit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year. ;
+[Fund management] Fund manager: Anil Bamboli
+Anil Bamboli (Jul 2022 - Present). Mr. Bamboli is a CFA from Association for Investment Management and Research, U.S.A, Masters in Management Studies (Finance) and a Graduate in Cost and Works Accountant from ICWAI. Prior to joining HDFC AMC he has worked with SBI Fund Management for 11 years.
+[Fund management] Fund manager: Arun Agarwal
+Arun Agarwal (Oct 2022 - Present). Mr. Agarwal is a B.Com. and Chartered Accountant Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.
+[Fund management] Fund manager: Dhruv Muchhal
+Dhruv Muchhal (Jun 2023 - Present). Mr. Dhruv has done B.Com, CA and CFA Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells
+[Fund management] Fund manager: Nandita Menezes
+Nandita Menezes (Mar 2025 - Present). CA (ICAI, INDIA), B.Com (University of Mumbai) Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP.
+[Fund management] Fund manager: Gopal Agrawal
+Gopal Agrawal (Jul 2022 - Present). Mr.Agrawal is a B.E and MBM. Prior to joining HDFC Mutual Fund he has worked with DSP Mutual Fund, Tata AMC, Mirae Asset Mutual Fund ,SBI Mutual Fund, Kotak Securities, HDFC Securities, IDBI Capital, UTI Securities and IPCL.
+[Fund management] Fund manager: Ihab Dalwai
+Ihab Dalwai (Sep 2026 - Present). Mr. Dalwai is a Chartered Accountant. Prior to joining the HDFC AMC, he was associated with ICICI Prudential AMC.
+[Holdings] Top 25 holdings (page lists 326 holdings)
+Largest holdings by weight as shown on the scheme page: ICICI Bank Ltd (5.32%); HDFC Bank Ltd (4.13%); Reliance Industries Ltd (3.74%); State Bank of India (3.46%); Bharti Airtel Ltd (2.93%); Axis Bank Ltd (2.68%); Larsen & Toubro Ltd (2.59%); GOI Sec 7.18 14/08/2033 (1.99%); NTPC Ltd (1.94%); Zomato Ltd (1.65%); Coal India Ltd (1.60%); Infosys Ltd (1.59%); Sun Pharmaceutical Industries Ltd (1.54%); Kotak Mahindra Bank Ltd (1.52%); Maruti Suzuki India Ltd (1.46%); HCL Technologies Ltd (1.24%); Tata Consultancy Services Ltd (1.20%); Life Insurance Corporation of India (1.18%); Interglobe Aviation Ltd (1.18%); Lupin Ltd (1.16%); ITC Ltd (1.02%); Mahindra & Mahindra Ltd (0.87%); SBI Life Insurance Company Ltd (0.87%); Hyundai Motor India Ltd. (0.82%); GAIL (India) Ltd (0.81%).

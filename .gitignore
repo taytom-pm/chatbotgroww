@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/
+data/chroma/
+data/chroma_bench/
+
+# Never commit real secrets. .env.example is the tracked template and IS committed.
+.env
+.env.*
+!.env.example

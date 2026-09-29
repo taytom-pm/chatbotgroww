@@ -1,0 +1,48 @@
+SOURCE_URL: https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth
+SCHEME: HDFC Equity Fund Direct Growth
+CATEGORY: Equity Flexi Cap
+RETRIEVED_AT: 2026-09-27T07:12:58+00:00
+
+== FACTS ==
+[Key facts] riskometer | Riskometer | Very High Risk
+[Key facts] nav | NAV | ₹2,214.57
+[Key facts] min_sip | Min. for SIP | ₹100
+[Key facts] aum | Fund size (AUM) | ₹1,13,606.47 Cr
+[Key facts] expense_ratio | Expense ratio | 0.77%
+[Key facts] rating | Rating | 5
+[Key facts] min_lumpsum | Min. for 1st investment | ₹100
+[Key facts] min_additional | Min. for 2nd investment | ₹100
+[Key facts] category | Fund category | Equity
+[Key facts] sub_category | Sub-category | Flexi Cap
+[Fees, exit load and tax] exit_load | Exit load | Exit load of 1% if redeemed within 1 year
+[Fees, exit load and tax] stamp_duty | Stamp duty on investment | 0.005% (from July 1st, 2020)
+[Fees, exit load and tax] tax_implication | Tax implication | If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.
+[Objective] objective | Investment objective | The scheme seeks to generate capital appreciation / income from a portfolio, predominantly invested in equity & equity related instruments.
+[Benchmark] benchmark | Benchmark | NIFTY 500 Total Return Index
+[Scheme details] fund_house | Fund house | HDFC Mutual Fund
+[Scheme details] rank | Rank (total assets) | #2 in India
+[Scheme details] total_aum | Total AUM | ₹9,86,236.84 Cr
+[Scheme details] incorporation_date | Date of Incorporation | 10 Dec 1999
+[Scheme details] launch_date | Launch Date | 10 Dec 1999
+[Scheme details] custodian | Custodian | Deutsche Bank
+[Scheme details] rta | Registrar & Transfer Agent | Cams
+
+== PROSE ==
+[Fees, exit load and tax] Exit load revision history
+Historic exit load changes listed on the scheme page: 01 Jan 2013: Exit load of 1% if redeemed within 1 year.
+[Glossary] Glossary: Absolute returns
+The total return of a mutual fund over a given period.
+[Glossary] Glossary: Expense ratio
+A fee payable to a mutual fund house for managing your mutual fund investments. It is the total percentage of a company's fund assets used for administrative, management, advertising, and other expenses.
+[Glossary] Glossary: Tax
+A percentage of your capital gains payable to the government upon exiting your mutual fund investments. Taxation is categorized as long-term capital gains (LTCG) and short-term capital gains (STCG) depending on your holding period and the type of fund.
+[Glossary] Glossary: Exit load
+A fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment.
+[Glossary] Glossary: Stamp duty
+A form of tax payable for the purchase or sale of an asset or security.
+[Fund management] Fund manager: Dhruv Muchhal
+Dhruv Muchhal (Jun 2023 - Present). Mr. Dhruv has done B.Com, CA and CFA Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells
+[Fund management] Fund manager: Amit Ganatra
+Amit Ganatra (Feb 2026 - Present). Mr. Ganatra holds a Commerce degree and is a Charted Accountant. He is also a Chartered Financial Analyst from AIMR. Prior to joining the HDFC AMC, he has worked with Invesco Asset Management (India) Pvt. Ltd, HDFC Mutual Fund, DBS Cholamandalam AMC Pvt. Ltd. and Fidelity.
+[Holdings] Top 25 holdings (page lists 86 holdings)
+Largest holdings by weight as shown on the scheme page: ICICI Bank Ltd (9.19%); Axis Bank Ltd (6.19%); HDFC Bank Ltd (5.71%); State Bank of India (4.16%); Zomato Ltd (3.39%); Kotak Mahindra Bank Ltd (3.27%); SBI Life Insurance Company Ltd (3.19%); Larsen & Toubro Ltd (3.16%); Interglobe Aviation Ltd (2.98%); Maruti Suzuki India Ltd (2.74%); Bharti Airtel Ltd (2.58%); Repo (2.55%); HCL Technologies Ltd (2.48%); Cipla Ltd (2.47%); Eicher Motors Ltd (2.44%); Power Grid Corporation of India Ltd (2.04%); Hyundai Motor India Ltd. (1.75%); Nexus Select Trust (1.62%); Divi's Laboratories Ltd (1.58%); PB Fintech Ltd (1.52%); Max Healthcare Institute Ltd (1.49%); JSW Steel Ltd (1.45%); Piramal Pharma Ltd (1.44%); Reliance Industries Ltd (1.44%); Bosch Ltd (1.34%).

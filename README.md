@@ -41,6 +41,9 @@ First run downloads the MiniLM model (~90 MB) into the HuggingFace cache and tak
 minutes. Later runs load from disk. Subsequent `build_index.py` runs reuse the cache unless you
 pass `--refresh`.
 
+Step 2 is optional on a fresh clone: the index is committed (see [Deploying](#deploying)), so the
+app answers as soon as it starts. Rebuild it only to pick up newer page values.
+
 ### Refresh the data
 
 ```powershell
@@ -56,16 +59,57 @@ can rebuild embeddings offline.
 .\.venv\Scripts\python.exe -m unittest discover -s tests -t .
 ```
 
-131 tests: ingestion completeness, PII guard, intent routing, field-answer correctness, answer
+133 tests: ingestion completeness, PII guard, intent routing, field-answer correctness, answer
 grounding, sentence limits, one-citation-per-answer, identifier leakage, source-provenance and
 index idempotency, evaluation-harness honesty, deliverable traceability, conversation memory,
-the guard that keeps the LLM out of the answer path, and the UI's clickable example questions.
+the guard that keeps the LLM out of the answer path, the UI's clickable example questions, and
+the two that stop a deploy shipping without an index.
 
 ### Command line
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\ask.py
 ```
+
+## Deploying
+
+The app is a single `streamlit run app.py` process with no secrets and no external services. Point
+Streamlit Community Cloud (or any host) at the repo, set nothing, and deploy. There is no build
+step to configure and no environment variable to set.
+
+**One non-obvious requirement: the index has to be in the repo.** A deployed copy is built from
+git and has no shell, so it cannot run `scripts/build_index.py` itself. When `data/chunks.jsonl`
+and `data/chroma/` were gitignored, every deploy opened on:
+
+> No index found. Build it first: python scripts/build_index.py
+
+which is advice a hosted app cannot act on. Both paths are now committed - 133 KB of chunks plus
+3.0 MB of ChromaDB store, 3.2 MB total for 168 chunks - so a cold start answers immediately. If
+you rebuild locally, commit the result too:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\build_index.py --refresh
+git add data/chunks.jsonl data/chroma
+git commit -m "Refresh index"
+```
+
+Two layers protect the deploy, and the second is not optional:
+
+1. **Committed index** - the fast path. No build, no fetch, no embed on startup.
+2. **Self-heal in `app.py`** - `ensure_index()` builds the index if it is missing, so a fresh
+   clone, a wiped container or a store that cannot be read still ends up working. It needs
+   outbound network to `groww.in` and takes 1-3 minutes, and it shows progress in the UI. It runs
+   at most once per container, because the result is cached with the rest of the assistant.
+
+`requirements.txt` pins `chromadb>=1.5.9` with no upper bound, so a deploy can end up with a
+version that cannot read the committed `data/chroma/`. That case is handled too:
+`index_exists()` treats an unreadable store as missing (rather than raising past the self-heal),
+and `build_index()` retries once after `reset_store()`. The store is derived from the source
+pages, so an unreadable one is never worth keeping.
+
+To test either layer, run the app against a checkout with the index deleted - the self-heal path
+is covered by `tests/test_faq.py::TestUiSource::test_app_handles_missing_index` and
+`test_index_is_committed_so_deploys_are_not_broken`.
 
 ## RAG pipeline
 
@@ -303,12 +347,12 @@ scripts/
   benchmark_paraphrase.py   phrasing robustness, scored on the shipped hybrid retriever
   gen_paraphrases.py        regenerates the paraphrase cache (--seed needs no key)
   test_ui.py                Streamlit AppTest smoke test
-tests/test_faq.py           131-test suite
+tests/test_faq.py           133-test suite
 data/
-  raw/ clean/               fetched HTML and extracted text
-  chunks.jsonl              168 chunks
+  raw/ clean/               fetched HTML and extracted text (not committed)
+  chunks.jsonl              168 chunks (committed - a deploy has no shell to build it)
+  chroma/                   persistent vector store (committed, same reason)
   documents.json            structured documents
-  chroma/                   persistent vector store
   ingest_log.json           fetch + conflict log
   chunking_report.json      chunking diagnostics
   paraphrase_queries.json   cached query rephrasings (committed, so eval needs no key)

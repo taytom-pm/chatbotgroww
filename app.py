@@ -10,7 +10,7 @@ import streamlit as st
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from mf_rag.config import EMBEDDING_MODEL, RETRIEVE_FINAL_K
-from mf_rag.embed_store import index_exists
+from mf_rag.embed_store import build_index, index_exists
 from mf_rag.pipeline import EXAMPLE_QUESTIONS, PipelineMissing, get_assistant
 from mf_rag.sources import AMC_NAME, DISCLAIMER, SOURCES
 
@@ -26,6 +26,43 @@ WELCOME = (
 @st.cache_resource(show_spinner="Loading embedding model and vector index...")
 def assistant():
     return get_assistant()
+
+
+def ensure_index() -> bool:
+    """Build the index if it is missing. Returns False if the app cannot answer.
+
+    A deployed copy of this app is built from the repo and has no shell, so the old
+    "run: python scripts/build_index.py" error was advice nobody could act on - it is
+    what a hosted deploy showed until the index was committed. The committed index is
+    the fast path; this is the fallback for a fresh clone, a wiped container or a
+    store that cannot be read, so the app is never permanently dead.
+    """
+    if index_exists():
+        return True
+
+    with st.status(
+        "No index found. Building it now - first run only, usually 1-3 minutes.",
+        expanded=True,
+    ) as status:
+        status.write("Fetching 5 scheme pages, then chunking, embedding and storing in ChromaDB.")
+        try:
+            stats = build_index()
+        except Exception as exc:  # network, DNS, disk quota, a broken store
+            # st.status's API is update(label=..., state=...), and write() takes no state.
+            # Assigning `status.state` would only set a Python attribute and never repaint.
+            status.update(label=f"Index build failed: {type(exc).__name__}", state="error")
+            st.error(f"Could not build the index: {type(exc).__name__}: {exc}")
+            st.caption(
+                "This needs network access to groww.in. Retry by reloading the page; "
+                "locally, run: python scripts/build_index.py"
+            )
+            return False
+        status.update(label=f"Index built: {stats.summary()}", state="complete")
+
+    if not index_exists():
+        st.error("The index was built but is still not readable. Please reload the page.")
+        return False
+    return True
 
 
 def init_state() -> None:
@@ -112,15 +149,14 @@ def main() -> None:
     st.title("HDFC Mutual Fund facts assistant")
     st.caption(DISCLAIMER)
 
-    if not index_exists():
-        st.error("No index found. Build it first:")
-        st.code("python scripts/build_index.py", language="bash")
+    if not ensure_index():
         return
 
     try:
         bot = assistant()
     except PipelineMissing as exc:
         st.error(str(exc))
+        st.code("python scripts/build_index.py", language="bash")
         return
 
     # Settings must be evaluated BEFORE the transcript is rendered. Streamlit reruns

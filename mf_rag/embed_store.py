@@ -7,12 +7,12 @@ a persistent ChromaDB collection using cosine distance.
 from __future__ import annotations
 
 import json
+import shutil
 from dataclasses import dataclass
-from typing import Iterable, Sequence
+from typing import TYPE_CHECKING, Iterable, Sequence
 
 import chromadb
 from chromadb.config import Settings
-from sentence_transformers import SentenceTransformer
 
 from .chunking import Chunk
 from .config import (
@@ -23,6 +23,9 @@ from .config import (
     EMBEDDING_MODEL,
 )
 from .ingest import documents_to_json, load_documents
+
+if TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
 
 # Process-local caches. Correct for Streamlit's single process and for the CLI, wrong for
 # multi-worker serving: each worker would load its own model copy and its own Chroma handle
@@ -56,6 +59,8 @@ class IndexStats:
 def get_model() -> SentenceTransformer:
     global _MODEL
     if _MODEL is None:
+        from sentence_transformers import SentenceTransformer
+
         _MODEL = SentenceTransformer(EMBEDDING_MODEL)
     return _MODEL
 
@@ -164,7 +169,37 @@ def persist_documents(documents) -> int:
 
 
 def index_exists() -> bool:
-    return CHUNKS_PATH.exists() and get_collection().count() > 0
+    """True only if the chunks and the collection are both present and readable.
+
+    An unreadable store counts as missing on purpose. `requirements.txt` pins
+    `chromadb>=1.5.9` with no upper bound, so a deploy can install a version whose on-disk
+    schema does not match the committed `data/chroma/`. Raising here would take the app past
+    the self-heal in `app.ensure_index()` and surface a raw traceback instead of a rebuild,
+    which is the one failure mode that leaves a hosted deploy permanently dead.
+    """
+    if not CHUNKS_PATH.exists():
+        return False
+    try:
+        return get_collection().count() > 0
+    except Exception:
+        return False
+
+
+def reset_store() -> None:
+    """Delete the Chroma store. The index is reproducible from source, so a store that
+    cannot be read is never worth keeping - and it is the one thing blocking a rebuild."""
+    global _CLIENT
+    if _CLIENT is not None:
+        try:
+            _CLIENT.delete_collection(CHROMA_COLLECTION)
+        except Exception:
+            pass
+        try:
+            _CLIENT.reset()
+        except Exception:
+            pass
+        _CLIENT = None
+    shutil.rmtree(CHROMA_DIR, ignore_errors=True)
 
 
 def build_index(*, refresh: bool = False) -> IndexStats:
@@ -174,4 +209,11 @@ def build_index(*, refresh: bool = False) -> IndexStats:
     chunks = chunk_corpus(documents, count_tokens_minilm)
     persist_chunks(chunks)
     persist_documents(documents)
-    return upsert_chunks(chunks)
+    try:
+        return upsert_chunks(chunks)
+    except Exception:
+        # A store left over from an incompatible chromadb cannot be written to. It is
+        # derived data, so drop it and build once more rather than leaving the deploy
+        # stuck on an error it cannot clear from a browser.
+        reset_store()
+        return upsert_chunks(chunks)

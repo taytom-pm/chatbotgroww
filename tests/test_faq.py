@@ -268,6 +268,41 @@ class TestStore(unittest.TestCase):
 
         self.assertTrue(index_exists())
 
+    def test_unreadable_store_counts_as_missing(self) -> None:
+        """A store from an incompatible chromadb must not take the app down with a traceback.
+
+        `requirements.txt` pins `chromadb>=1.5.9` with no upper bound, so a deploy can install
+        a version that cannot read the committed `data/chroma/`. `index_exists()` returning
+        False sends that down the self-heal in `app.ensure_index()`; raising would bypass it.
+        """
+        from mf_rag import embed_store
+
+        with mock.patch.object(
+            embed_store, "get_collection", side_effect=RuntimeError("schema mismatch")
+        ):
+            self.assertFalse(embed_store.index_exists())
+
+    def test_index_exists_false_without_chunks_file(self) -> None:
+        from mf_rag import embed_store
+
+        with mock.patch.object(embed_store, "CHUNKS_PATH", ROOT / "data" / "does-not-exist.jsonl"):
+            self.assertFalse(embed_store.index_exists())
+
+    def test_build_recovers_from_an_unwritable_store(self) -> None:
+        """The rebuild must clear a store it cannot write to, rather than just failing.
+
+        `build_index` retries once after `reset_store()`. The store is derived from the
+        source pages, so a stale one from a different chromadb is never worth keeping - and
+        a deploy cannot clear it by hand.
+        """
+        source = (ROOT / "mf_rag" / "embed_store.py").read_text(encoding="utf-8")
+        self.assertIn("def reset_store(", source)
+        self.assertIn("shutil.rmtree(CHROMA_DIR", source)
+        body = source[source.index("def build_index(") :]
+        self.assertIn("except Exception:", body)
+        self.assertIn("reset_store()", body)
+        self.assertEqual(body.count("upsert_chunks(chunks)"), 2, "expected exactly one retry")
+
 
 class TestRetrieval(unittest.TestCase):
     """Stage 5: hybrid dense + BM25 retrieval fused with RRF."""
@@ -1032,8 +1067,19 @@ class TestUiSource(unittest.TestCase):
         )
 
     def test_app_handles_missing_index(self) -> None:
+        """A hosted deploy has no shell, so a missing index must be BUILT, not reported.
+
+        The committed index is the fast path, but the app used to open on
+        "No index found. Build it first: python scripts/build_index.py" - a command a
+        deployed Streamlit app cannot run, which is exactly what the hosted site showed.
+        """
         self.assertIn("if not index_exists():", self.source)
-        self.assertIn("st.error", self.source)
+        self.assertIn("def ensure_index(", self.source)
+        self.assertIn("build_index()", self.source)
+        self.assertNotIn("st.error(\"No index found", self.source)
+        # the build must be attempted, and a failure must be survivable
+        self.assertIn("except Exception as exc", self.source)
+        # the manual command survives only as the fallback for a failed build
         self.assertIn("python scripts/build_index.py", self.source)
         self.assertIn("except PipelineMissing", self.source)
         # the guard must run before the assistant is ever constructed
@@ -1041,6 +1087,48 @@ class TestUiSource(unittest.TestCase):
             self.source.index("if not index_exists():"),
             self.source.index("bot = assistant()"),
             "the missing-index guard must come before the assistant is built",
+        )
+        self.assertLess(
+            self.source.index("if not ensure_index():"),
+            self.source.index("bot = assistant()"),
+            "main() must bootstrap the index before building the assistant",
+        )
+
+    def test_index_is_committed_so_deploys_are_not_broken(self) -> None:
+        """The bug this guards: the index was gitignored, so every deploy had none.
+
+        `data/chunks.jsonl` and `data/chroma/` must be tracked (or at least not ignored),
+        because a deployed app is built from the repo and cannot run the build itself on
+        demand. Un-ignoring them is what makes the hosted site answer on first paint.
+        """
+        ignore = (ROOT / ".gitignore").read_text(encoding="utf-8")
+        ignored = {
+            line.strip().rstrip("/")
+            for line in ignore.splitlines()
+            if line.strip().startswith("data/") and not line.strip().startswith("#")
+        }
+        for required in ("data/chunks.jsonl", "data/chroma"):
+            with self.subTest(path=required):
+                self.assertNotIn(required, ignored, f"{required} must not be gitignored")
+
+        for required in (ROOT / "data" / "chunks.jsonl", ROOT / "data" / "chroma"):
+            with self.subTest(path=required.name):
+                self.assertTrue(required.exists(), f"{required} must exist for a deploy to work")
+
+    def test_ensure_index_builds_and_verifies(self) -> None:
+        """A build that silently fails must not leave the app half-working."""
+        body = self.source[self.source.index("def ensure_index(") :]
+        self.assertIn("build_index()", body)
+        # st.status takes its state through update(); write() has no state kwarg and
+        # `status.state = ...` would only set a Python attribute without repainting.
+        self.assertIn('status.update(label=f"Index build failed', body)
+        self.assertNotRegex(body, r"status\.write\([^)]*state\s*=")
+        self.assertNotRegex(body, r"status\.state\s*=")
+        # re-checked after the build: a build that wrote nothing must not pass silently
+        self.assertLess(
+            body.index("build_index()"),
+            body.rindex("if not index_exists():"),
+            "the index must be re-checked after the build",
         )
 
     def test_render_answer_switches_on_kind(self) -> None:
